@@ -1,0 +1,22 @@
+body {
+  // 引用样式修改
+  blockquote {
+    border-inline-start: 0.2rem solid;
+    border-color: #bdc2c2;
+    background-color: rgba(198, 197, 196, 0.159);
+    padding: 0.8rem 1rem;
+    color: #666;
+  }
+}
+
+[data-theme="dark"] blockquote {
+  border-color: #8c9595 !important;
+  background-color: rgba(207, 204, 201, 0.1);
+  color: #999;
+}
+[data-theme="light"] .code-demo-container {
+  background-color: #fff;
+}
+[data-theme="dark"] .code-demo-container {
+  background-color: #282c34;
+}

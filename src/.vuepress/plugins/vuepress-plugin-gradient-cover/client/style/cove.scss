@@ -1,0 +1,60 @@
+
+/* 定义 keyframes 动画 */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.page-bg {
+  user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  // background-color: #e493d0;
+  // background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+  background-image: linear-gradient(
+    to right,
+    #eea2a2 0%,
+    #bbc1bf 19%,
+    #57c6e1 42%,
+    #b49fda 79%,
+    #7ac5d8 100%
+  );
+  // background-image: linear-gradient(
+  //   -225deg,
+  //   #eea2a2 0%,
+  //   #2cd8d5 30%,
+  //   #c5c1ff 56%,
+  //   #ffbac3 100%
+  // );
+  animation: gradientBG 15s ease infinite; /* 应用动画 */
+  background-size: 300% 300%; /* 背景大小 */
+}
+.page-bg::after {
+  content: "";
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+[data-theme="dark"] .page-bg:after {
+  background-color: #1d2025b3;
+}
+[data-theme="light"] .page-bg:after {
+  background-color: #ffffff1a;
+}
