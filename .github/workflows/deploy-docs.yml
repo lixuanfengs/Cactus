@@ -50,3 +50,18 @@ jobs:
           branch: gh-pages
           folder: src/.vuepress/dist
           token: ${{ secrets.CACTUSA_TOKEN }}
+
+      - name: 复制到 Vercel
+        if: always()
+        uses: andstor/copycat-action@v3
+        with:
+          personal_token: ${{ secrets.CACTUSA_TOKEN }}
+          src_path: /.
+          dst_path: /
+          # 你的用户名
+          dst_owner: cactus
+          # 与 Vercel 链接的仓库名，也就是 Vercel 部署时新建的仓库
+          dst_repo_name: Cactus-Vercel
+          dst_branch: main
+          src_branch: gh-pages
+          clean: true
