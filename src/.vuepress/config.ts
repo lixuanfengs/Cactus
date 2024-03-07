@@ -13,7 +13,7 @@ import { shikiPlugin } from "@vuepress/plugin-shiki";
 
 
 export default defineUserConfig({
-  base: "/",
+  base: "/Cactus/",
   lang: "zh-CN",
   head: [["meta", { name: "referrer", content: "no-referrer-when-downgrade" }]],
   locales: {
