@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://cactusli.net/Cactus/rss.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://cactusli.net/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <atom:link href="https://cactusli.net/Cactus/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://cactusli.net/rss.xml" rel="self" type="application/rss+xml"/>
     <title>Cactus&amp;apos;s Blog</title>
-    <link>https://cactusli.net/Cactus/</link>
+    <link>https://cactusli.net/</link>
     <description>仙人球的博客</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 07 Mar 2024 02:04:04 GMT</pubDate>
-    <lastBuildDate>Thu, 07 Mar 2024 02:04:04 GMT</lastBuildDate>
+    <pubDate>Thu, 07 Mar 2024 02:12:15 GMT</pubDate>
+    <lastBuildDate>Thu, 07 Mar 2024 02:12:15 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -15,29 +15,29 @@
     <category>Java</category>
     <item>
       <title>Intro Page</title>
-      <link>https://cactusli.net/Cactus/intro.html</link>
-      <guid>https://cactusli.net/Cactus/intro.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">Intro Page</source>
+      <link>https://cactusli.net/intro.html</link>
+      <guid>https://cactusli.net/intro.html</guid>
+      <source url="https://cactusli.net/rss.xml">Intro Page</source>
       <description>Intro Page Place your introduction and profile here.</description>
       <pubDate>Wed, 06 Mar 2024 07:41:39 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>Place your introduction and profile here.</p>
 ]]></content:encoded>
-      <enclosure url="https://cactusli.net/Cactus/assets/images/cover3.jpg" type="image/jpeg"/>
+      <enclosure url="https://cactusli.net/assets/images/cover3.jpg" type="image/jpeg"/>
     </item>
     <item>
       <title>主要功能与配置演示</title>
-      <link>https://cactusli.net/Cactus/demo/</link>
-      <guid>https://cactusli.net/Cactus/demo/</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">主要功能与配置演示</source>
+      <link>https://cactusli.net/demo/</link>
+      <guid>https://cactusli.net/demo/</guid>
+      <source url="https://cactusli.net/rss.xml">主要功能与配置演示</source>
       <category>使用指南</category>
       <pubDate>Wed, 06 Mar 2024 07:41:39 GMT</pubDate>
     </item>
     <item>
       <title>布局与功能禁用</title>
-      <link>https://cactusli.net/Cactus/demo/disable.html</link>
-      <guid>https://cactusli.net/Cactus/demo/disable.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">布局与功能禁用</source>
+      <link>https://cactusli.net/demo/disable.html</link>
+      <guid>https://cactusli.net/demo/disable.html</guid>
+      <source url="https://cactusli.net/rss.xml">布局与功能禁用</source>
       <description>你可以通过设置页面的 Frontmatter，在页面禁用功能与布局。 本页面就是一个示例，禁用了如下功能: 导航栏 侧边栏 路径导航 页面信息 贡献者 编辑此页链接 更新时间 上一篇/下一篇 链接 评论 页脚 返回顶部按钮</description>
       <category>使用指南</category>
       <pubDate>Wed, 06 Mar 2024 07:41:39 GMT</pubDate>
@@ -61,9 +61,9 @@
     </item>
     <item>
       <title>布局</title>
-      <link>https://cactusli.net/Cactus/demo/layout.html</link>
-      <guid>https://cactusli.net/Cactus/demo/layout.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">布局</source>
+      <link>https://cactusli.net/demo/layout.html</link>
+      <guid>https://cactusli.net/demo/layout.html</guid>
+      <source url="https://cactusli.net/rss.xml">布局</source>
       <description>布局包括: 导航栏 侧边栏 页脚 同时每个页面包含: 路径导航 标题和页面信息 TOC (文章标题列表) 贡献者、更新时间等页面元信息 评论 主题也带有以下元素: 夜间模式按钮 返回顶部按钮 打印按钮 你可以在主题选项和页面的 frontmatter 中自定义它们。</description>
       <category>指南</category>
       <pubDate>Wed, 06 Mar 2024 07:41:39 GMT</pubDate>
@@ -92,9 +92,9 @@
     </item>
     <item>
       <title>Markdown 展示</title>
-      <link>https://cactusli.net/Cactus/demo/markdown.html</link>
-      <guid>https://cactusli.net/Cactus/demo/markdown.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">Markdown 展示</source>
+      <link>https://cactusli.net/demo/markdown.html</link>
+      <guid>https://cactusli.net/demo/markdown.html</guid>
+      <source url="https://cactusli.net/rss.xml">Markdown 展示</source>
       <description>VuePress 主要从 Markdown 文件生成页面。因此，你可以使用它轻松生成文档或博客站点。 你应该创建和编写 Markdown 文件，以便 VuePress 可以根据文件结构将它们转换为不同的页面。 Markdown 介绍 如果你是一个新手，还不会编写 Markdown，请先阅读 Markdown 介绍 和 Markdown 演示。 Mark...</description>
       <category>使用指南</category>
       <pubDate>Wed, 06 Mar 2024 07:41:39 GMT</pubDate>
@@ -200,9 +200,9 @@
     </item>
     <item>
       <title>页面配置</title>
-      <link>https://cactusli.net/Cactus/demo/page.html</link>
-      <guid>https://cactusli.net/Cactus/demo/page.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">页面配置</source>
+      <link>https://cactusli.net/demo/page.html</link>
+      <guid>https://cactusli.net/demo/page.html</guid>
+      <source url="https://cactusli.net/rss.xml">页面配置</source>
       <description>more 注释之前的内容被视为文章摘要。 页面标题 The first H1 title in Markdown will be regarded as page title. Markdown 中的第一个 H1 标题会被视为页面标题。 你可以在 Markdown 的 Frontmatter 中设置页面标题。 页面信息 你可以在 Markdown 的 ...</description>
       <category>使用指南</category>
       <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
@@ -213,13 +213,13 @@
 <p>Markdown 中的第一个 H1 标题会被视为页面标题。</p>
 <p>你可以在 Markdown 的 Frontmatter 中设置页面标题。</p>
 <div class="language-markdown line-numbers-mode" data-ext="md" data-title="md"><pre class="shiki one-dark-pro" style="background-color:#282c34;color:#abb2bf" tabindex="0"><code><span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true"></div></div>]]></content:encoded>
-      <enclosure url="https://cactusli.net/Cactus/assets/images/cover1.jpg" type="image/jpeg"/>
+      <enclosure url="https://cactusli.net/assets/images/cover1.jpg" type="image/jpeg"/>
     </item>
     <item>
       <title>1.Collection 类关系图</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/1.Collection%20%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/1.Collection%20%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">1.Collection 类关系图</source>
+      <link>https://cactusli.net/posts/Java/Collection/1.Collection%20%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/1.Collection%20%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.html</guid>
+      <source url="https://cactusli.net/rss.xml">1.Collection 类关系图</source>
       <description>本文主要介绍JDK中Collection和Map相关知识体系，后续章节将对主要对类进行源码解读。 Collection 类关系图 知识体系结构 介绍 Collection Set TreeSet HashSet LinkedHashSet List ArrayList Vector LinkedList Queue LinkedList Priorit...</description>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:10:26 GMT</pubDate>
@@ -317,73 +317,73 @@
     </item>
     <item>
       <title>2.ArrayList 源码解析</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/2.ArrayList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/2.ArrayList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">2.ArrayList 源码解析</source>
+      <link>https://cactusli.net/posts/Java/Collection/2.ArrayList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/2.ArrayList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
+      <source url="https://cactusli.net/rss.xml">2.ArrayList 源码解析</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>
     <item>
       <title>3.LinkedList 源码解析</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/3.LinkedList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/3.LinkedList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">3.LinkedList 源码解析</source>
+      <link>https://cactusli.net/posts/Java/Collection/3.LinkedList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/3.LinkedList%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
+      <source url="https://cactusli.net/rss.xml">3.LinkedList 源码解析</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>
     <item>
       <title>4.Stack &amp; Queue 源码解析</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/4.Stack%20_%20Queue%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/4.Stack%20_%20Queue%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">4.Stack &amp; Queue 源码解析</source>
+      <link>https://cactusli.net/posts/Java/Collection/4.Stack%20_%20Queue%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/4.Stack%20_%20Queue%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
+      <source url="https://cactusli.net/rss.xml">4.Stack &amp; Queue 源码解析</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>
     <item>
       <title>5.PriorityQueue 源码解析</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/5.PriorityQueue%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/5.PriorityQueue%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">5.PriorityQueue 源码解析</source>
+      <link>https://cactusli.net/posts/Java/Collection/5.PriorityQueue%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/5.PriorityQueue%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
+      <source url="https://cactusli.net/rss.xml">5.PriorityQueue 源码解析</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>
     <item>
       <title>6.HashSet &amp; HashMap 源码解析</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/6.HashSet%20_%20HashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/6.HashSet%20_%20HashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">6.HashSet &amp; HashMap 源码解析</source>
+      <link>https://cactusli.net/posts/Java/Collection/6.HashSet%20_%20HashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/6.HashSet%20_%20HashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
+      <source url="https://cactusli.net/rss.xml">6.HashSet &amp; HashMap 源码解析</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>
     <item>
       <title>7.LinkedHashSet&amp;Map 源码解析</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/7.LinkedHashSet_Map%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/7.LinkedHashSet_Map%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">7.LinkedHashSet&amp;Map 源码解析</source>
+      <link>https://cactusli.net/posts/Java/Collection/7.LinkedHashSet_Map%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/7.LinkedHashSet_Map%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
+      <source url="https://cactusli.net/rss.xml">7.LinkedHashSet&amp;Map 源码解析</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>
     <item>
       <title>8.TreeSet &amp; TreeMap 源码解析</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/8.TreeSet%20_%20TreeMap%20%E6%BA%90%E7%A0%81%E8%A7%A3.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/8.TreeSet%20_%20TreeMap%20%E6%BA%90%E7%A0%81%E8%A7%A3.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">8.TreeSet &amp; TreeMap 源码解析</source>
+      <link>https://cactusli.net/posts/Java/Collection/8.TreeSet%20_%20TreeMap%20%E6%BA%90%E7%A0%81%E8%A7%A3.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/8.TreeSet%20_%20TreeMap%20%E6%BA%90%E7%A0%81%E8%A7%A3.html</guid>
+      <source url="https://cactusli.net/rss.xml">8.TreeSet &amp; TreeMap 源码解析</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>
     <item>
       <title>9.WeakHashMap 源码解析</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Collection/9.WeakHashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Collection/9.WeakHashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">9.WeakHashMap 源码解析</source>
+      <link>https://cactusli.net/posts/Java/Collection/9.WeakHashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</link>
+      <guid>https://cactusli.net/posts/Java/Collection/9.WeakHashMap%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.html</guid>
+      <source url="https://cactusli.net/rss.xml">9.WeakHashMap 源码解析</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>
     <item>
       <title>1.Java 基础之面向对象</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Foundation/1.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Foundation/1.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">1.Java 基础之面向对象</source>
+      <link>https://cactusli.net/posts/Java/Foundation/1.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html</link>
+      <guid>https://cactusli.net/posts/Java/Foundation/1.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html</guid>
+      <source url="https://cactusli.net/rss.xml">1.Java 基础之面向对象</source>
       <description>Java 基础之面向对象 本文主要介绍Java OOP 面向对象基础和相关类图。 Java 基础 - 面向对象 三大特性 封装 继承 多态 类图 泛化关系 (Generalization) 实现关系 (Realization) 聚合关系 (Aggregation) 组合关系 (Composition) 关联关系 (Association) 依赖关系 (...</description>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 17:46:59 GMT</pubDate>
@@ -419,9 +419,9 @@
     </item>
     <item>
       <title>2.Java 基础之常见知识点</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Foundation/2.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%86%E7%82%B9.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Foundation/2.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%86%E7%82%B9.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">2.Java 基础之常见知识点</source>
+      <link>https://cactusli.net/posts/Java/Foundation/2.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%86%E7%82%B9.html</link>
+      <guid>https://cactusli.net/posts/Java/Foundation/2.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%9F%A5%E8%AF%86%E7%82%B9.html</guid>
+      <source url="https://cactusli.net/rss.xml">2.Java 基础之常见知识点</source>
       <description>[Java 基础之常见知识点](#Java 基础之常见知识点) 数据类型 包装类型 缓存池 String 概览 不可变的好处 String, StringBuffer and StringBuilder String.intern() 运算 参数传递 float 与 double 隐式类型转换 switch 继承 访问权限 抽象类与接口 super 重...</description>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 17:49:59 GMT</pubDate>
@@ -489,17 +489,17 @@
     </item>
     <item>
       <title>3.Java 基础之图谱.md</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Foundation/3.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%9B%BE%E8%B0%B1.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Foundation/3.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%9B%BE%E8%B0%B1.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">3.Java 基础之图谱.md</source>
+      <link>https://cactusli.net/posts/Java/Foundation/3.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%9B%BE%E8%B0%B1.html</link>
+      <guid>https://cactusli.net/posts/Java/Foundation/3.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%9B%BE%E8%B0%B1.html</guid>
+      <source url="https://cactusli.net/rss.xml">3.Java 基础之图谱.md</source>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 18:06:22 GMT</pubDate>
     </item>
     <item>
       <title>4.Java 基础之泛型机制</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Foundation/4.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Foundation/4.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">4.Java 基础之泛型机制</source>
+      <link>https://cactusli.net/posts/Java/Foundation/4.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6.html</link>
+      <guid>https://cactusli.net/posts/Java/Foundation/4.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6.html</guid>
+      <source url="https://cactusli.net/rss.xml">4.Java 基础之泛型机制</source>
       <description>Java泛型这个特性是从JDK 1.5才开始加入的，因此为了兼容之前的版本，Java泛型的实现采取了“伪泛型”的策略，即Java在语法上支持泛型，但是在编译阶段会进行所谓的“类型擦除”（Type Erasure），将所有的泛型表示（尖括号中的内容）都替换为具体的类型（其对应的原生态类型），就像完全没有泛型一样。本文综合多篇文章后，总结了Java 泛型的...</description>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 18:06:22 GMT</pubDate>
@@ -1374,9 +1374,9 @@
     </item>
     <item>
       <title>5.Java 基础之注解机制</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Foundation/5.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B3%A8%E8%A7%A3%E6%9C%BA%E5%88%B6.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Foundation/5.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B3%A8%E8%A7%A3%E6%9C%BA%E5%88%B6.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">5.Java 基础之注解机制</source>
+      <link>https://cactusli.net/posts/Java/Foundation/5.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B3%A8%E8%A7%A3%E6%9C%BA%E5%88%B6.html</link>
+      <guid>https://cactusli.net/posts/Java/Foundation/5.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B3%A8%E8%A7%A3%E6%9C%BA%E5%88%B6.html</guid>
+      <source url="https://cactusli.net/rss.xml">5.Java 基础之注解机制</source>
       <description>注解是JDK1.5版本开始引入的一个特性，用于对代码进行说明，可以对包、类、接口、字段、方法参数、局部变量等进行注解。它是框架学习和设计者必须掌握的基础。 Java 基础之注解机制 注解基础 Java内置注解 内置注解 - @Override 内置注解 - @Deprecated 内置注解 - @SuppressWarnings 元注解 元注解 - @...</description>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 18:06:22 GMT</pubDate>
@@ -1402,9 +1402,9 @@
     </item>
     <item>
       <title>6.Java 基础之异常机制</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Foundation/6.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Foundation/6.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">6.Java 基础之异常机制</source>
+      <link>https://cactusli.net/posts/Java/Foundation/6.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6.html</link>
+      <guid>https://cactusli.net/posts/Java/Foundation/6.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6.html</guid>
+      <source url="https://cactusli.net/rss.xml">6.Java 基础之异常机制</source>
       <description>Java异常是Java提供的一种识别及响应错误的一致性机制，java异常机制可以使程序中异常处理代码和正常业务代码分离，保证程序代码更加优雅，并提高程序健壮性。本文综合多篇文章后，总结了Java 异常的相关知识，希望可以提升你对Java中异常的认知效率。@pdai Java 基础之异常机制 异常的层次结构 Throwable Error（错误） Exc...</description>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 18:06:22 GMT</pubDate>
@@ -1845,9 +1845,9 @@
     </item>
     <item>
       <title>7.Java 基础之反射机制</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Foundation/7.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Foundation/7.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">7.Java 基础之反射机制</source>
+      <link>https://cactusli.net/posts/Java/Foundation/7.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6.html</link>
+      <guid>https://cactusli.net/posts/Java/Foundation/7.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6.html</guid>
+      <source url="https://cactusli.net/rss.xml">7.Java 基础之反射机制</source>
       <description>Java 基础之反射机制 JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。Java反射机制在框架设计中极为广泛，需要深入理解。本文综合多篇文章后，总结了Java 反射的相关知识，希望可以提升你对...</description>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 18:06:22 GMT</pubDate>
@@ -2017,9 +2017,9 @@
     </item>
     <item>
       <title>8.Java 基础之SPI机制</title>
-      <link>https://cactusli.net/Cactus/posts/Java/Foundation/8.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8BSPI%E6%9C%BA%E5%88%B6.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/Foundation/8.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8BSPI%E6%9C%BA%E5%88%B6.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">8.Java 基础之SPI机制</source>
+      <link>https://cactusli.net/posts/Java/Foundation/8.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8BSPI%E6%9C%BA%E5%88%B6.html</link>
+      <guid>https://cactusli.net/posts/Java/Foundation/8.Java%20%E5%9F%BA%E7%A1%80%E4%B9%8BSPI%E6%9C%BA%E5%88%B6.html</guid>
+      <source url="https://cactusli.net/rss.xml">8.Java 基础之SPI机制</source>
       <description>Java 基础之SPI机制 SPI（Service Provider Interface），是JDK内置的一种 服务提供发现机制，可以用来启用框架扩展和替换组件，主要是被框架的开发人员使用。 Java常用机制 - SPI机制 什么是SPI机制 SPI机制的简单示例 SPI机制的广泛应用 SPI机制 - JDBC DriverManager JDBC接口...</description>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 18:06:22 GMT</pubDate>
@@ -2054,9 +2054,9 @@
     </item>
     <item>
       <title>1.Java 并发知识体系</title>
-      <link>https://cactusli.net/Cactus/posts/Java/ThreadConcurrency/1.Java%20%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.html</link>
-      <guid>https://cactusli.net/Cactus/posts/Java/ThreadConcurrency/1.Java%20%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.html</guid>
-      <source url="https://cactusli.net/Cactus/rss.xml">1.Java 并发知识体系</source>
+      <link>https://cactusli.net/posts/Java/ThreadConcurrency/1.Java%20%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.html</link>
+      <guid>https://cactusli.net/posts/Java/ThreadConcurrency/1.Java%20%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.html</guid>
+      <source url="https://cactusli.net/rss.xml">1.Java 并发知识体系</source>
       <category>Java</category>
       <pubDate>Wed, 06 Mar 2024 10:15:26 GMT</pubDate>
     </item>

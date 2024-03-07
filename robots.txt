@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://cactusli.net/Cactus/sitemap.xml
+Sitemap: https://cactusli.net/sitemap.xml
