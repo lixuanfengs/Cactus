@@ -13,6 +13,7 @@ import { shikiPlugin } from "@vuepress/plugin-shiki";
 
 
 export default defineUserConfig({
+  dest: "./dev-ops/nginx/html", // 自定义博客构建后，静态文件输出的路径
   base: "/",
   lang: "zh-CN",
   head: [["meta", { name: "referrer", content: "no-referrer-when-downgrade" }]],
