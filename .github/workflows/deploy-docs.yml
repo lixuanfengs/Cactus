@@ -50,3 +50,14 @@ jobs:
           branch: gh-pages
           folder: src/.vuepress/dist
           token: ${{ secrets.CACTUSA_TOKEN }}
+
+      - name: 部署到 Vercel
+        uses: amondnet/vercel-action@v20 # 使用Vercel Action
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # 使用存储在Secrets的Vercel Token
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # 你的Vercel组织ID
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # 你的Vercel项目ID
+          vercel-args: '--prod' # 部署到生产环境
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
