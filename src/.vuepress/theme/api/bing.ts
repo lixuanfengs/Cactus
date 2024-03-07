@@ -46,4 +46,5 @@ export class BingApi {
       "/bing/HPImageArchive.aspx?format=js&idx=0&n=7&mkt=zh-CN"
     );
   }
+
 }
