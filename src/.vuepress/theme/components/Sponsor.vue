@@ -33,13 +33,16 @@
 <script setup lang="ts">
 import { ref, reactive, computed, onMounted } from "vue";
 import { useWindowSize } from "@theme-hope/composables/index";
-const githubLink = "https://github.com/OrageKK/sponsor-page";
+const githubLink = "https://github.com/lixuanfengs/Cactus";
 //const paypalLink = "https://www.paypal.me/oragekk";
+const paypalLink = "https://www.paypal.me/oragekk";
 const qrCodes = reactive({
   // btc_donate: "/assets/images/BTCQR.png",
   alipay_donate: "/assets/images/AliPayQR.jpg",
-  alipay_donate_link: "https://qr.alipay.com/fkx10720tbvl7vbt30mmad4",
-  wechat_donate: "/assets/images/WeChanSQ.jpg",
+  //alipay_donate_link: "https://qr.alipay.com/fkx10720tbvl7vbt30mmad4",
+    alipay_donate_link: "https://qr.alipay.com/fkx10720tbvlt30mmad4",
+
+    wechat_donate: "/assets/images/WeChanSQ.jpg",
 });
 const { isMobile } = useWindowSize();
 

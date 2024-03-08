@@ -23,14 +23,14 @@
     "echarts": "^5.5.0",
     "flowchart.ts": "^3.0.0",
     "katex": "^0.16.9",
-    "mermaid": "^10.8.0",
+    "mermaid": "^10.9.0",
     "reveal.js": "^5.0.5",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vuepress": "2.0.0-rc.8",
-    "vuepress-plugin-comment2": "2.0.0-rc.27",
+    "vuepress-plugin-comment2": "2.0.0-rc.29",
     "vuepress-shared": "2.0.0-rc.27",
-    "vuepress-theme-hope": "2.0.0-rc.27"
+    "vuepress-theme-hope": "2.0.0-rc.29"
   },
   "dependencies": {
     "@moefy-canvas/core": "^0.5.2",
