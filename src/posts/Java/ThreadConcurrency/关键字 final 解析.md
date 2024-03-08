@@ -283,7 +283,7 @@ read()方法主要包含了三个操作：
 
 假设线程A写过程没有重排序，那么线程A和线程B有一种的可能执行时序为下图：
 
-![img](images/thread/java-thread-x-key-final-2.png)
+![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-key-final-2.png)
 
 读对象的普通域被重排序到了读对象引用的前面就会出现线程B还未读到对象引用就在读取该对象的普通域变量，这显然是错误的操作。而final域的读操作就“限定”了在读final域变量前已经读到了该对象的引用，从而就可以避免这种情况。
 

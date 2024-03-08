@@ -26,7 +26,7 @@ order: 21
   - Fork/Join框架源码解析
     - ForkJoinPool
       - [核心参数](#核心参数)
-      - [ForkJoinPool.WorkQueue 中的相关属性:](#forkjoinpoolworkqueue-中的相关属性)
+      - [ForkJoinPool.WorkQueue 中的相关属性](#forkjoinpoolworkqueue-中的相关属性)
     - ForkJoinTask
       - [核心参数](#核心参数-1)
   - Fork/Join框架源码解析
@@ -34,7 +34,7 @@ order: 21
     - 执行流程 - 外部任务(external/submissions task)提交
       - [externalPush(ForkJoinTask task)](#externalpushforkjointask-task)
       - [externalSubmit(ForkJoinTask task)](#externalsubmitforkjointask-task)
-      - [signalWork(WorkQueue[\] ws, WorkQueue q)](#signalworkworkqueue-ws-workqueue-q)
+      - [signalWork(WorkQueue[] ws, WorkQueue q)](https://pdai.tech/md/java/thread/java-thread-x-juc-executor-ForkJoinPool.html#signalworkworkqueue-ws-workqueue-q)
       - [tryAddWorker(long c)](#tryaddworkerlong-c)
       - [createWorker()](#createworker)
       - [registerWorker()](#registerworker)
@@ -163,7 +163,7 @@ work-stealing(工作窃取)算法: 线程池内的所有工作线程都尝试找
 
 ### [#](#forkjoinpool继承关系) ForkJoinPool继承关系
 
-![img](images/thread/java-thread-x-forkjoin-1.png)
+![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-forkjoin-1.png)
 
 内部类介绍:
 
@@ -179,7 +179,7 @@ work-stealing(工作窃取)算法: 线程池内的所有工作线程都尝试找
 
 ### [#](#forkjointask继承关系) ForkJoinTask继承关系
 
-![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-forkjoin-1.png)
+![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-forkjoin-4.png)
 
 ForkJoinTask 实现了 Future 接口，说明它也是一个可取消的异步运算任务，实际上ForkJoinTask 是 Future 的轻量级实现，主要用在纯粹是计算的函数式任务或者操作完全独立的对象计算任务。fork 是主运行方法，用于异步执行；而 join 方法在任务结果计算完毕之后才会运行，用来合并或返回计算结果。 其内部类都比较简单，ExceptionNode 是用于存储任务执行期间的异常信息的单向链表；其余四个类是为 Runnable/Callable 任务提供的适配器类，用于把 Runnable/Callable 转化为 ForkJoinTask 类型的任务(因为 ForkJoinPool 只可以运行 ForkJoinTask 类型的任务)。
 
@@ -1181,7 +1181,7 @@ ForkJoinTask的join()和invoke()方法都可以用来获取任务的执行结果
 
 在这些方法中，join()相对比较全面，所以之后的讲解我们将从join()开始逐步向下分析，首先看一下join()的执行流程:
 
-![img](images/thread/java-thread-x-forkjoin-6.png)
+![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-forkjoin-6.png)
 
 后面的源码分析中，我们首先讲解比较简单的外部 join 任务(externalAwaitDone)，然后再讲解内部 join 任务(从ForkJoinPool.awaitJoin()开始)。
 

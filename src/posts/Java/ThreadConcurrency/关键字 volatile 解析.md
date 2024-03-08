@@ -13,7 +13,7 @@ order: 6
 
 > 相比Sychronized(重量级锁，对系统性能影响较大)，volatile提供了另一种解决可见性和有序性问题的方案。@pdai
 
-- 关键字: volatile详解
+- 关键字 volatile 解析
   - [带着BAT大厂的面试问题去理解volatile](#带着bat大厂的面试问题去理解volatile)
   - volatile的作用详解
     - [防重排序](#防重排序)
@@ -302,7 +302,7 @@ class VolatileExample {
 - 根据 volatile 规则：2 happens-before 3。
 - 根据 happens-before 的传递性规则：1 happens-before 4。
 
-![img](images/thread/java-thread-x-key-volatile-1.png)
+![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-key-volatile-1.png)
 
 因为以上规则，当线程 A 将 volatile 变量 flag 更改为 true 后，线程 B 能够迅速感知。
 
@@ -314,7 +314,7 @@ Java 编译器会在生成指令系列时在适当的位置会插入内存屏障
 
 JMM 会针对编译器制定 volatile 重排序规则表。
 
-![img](images/thread/java-thread-x-key-volatile-2.png)
+![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-key-volatile-2.png)
 
 " NO " 表示禁止重排序。
 
@@ -336,9 +336,11 @@ volatile 写是在前面和后面分别插入内存屏障，而 volatile 读操�
 | LoadLoad 屏障   | 禁止下面所有的普通读操作和上面的 volatile 读重排序。        |
 | LoadStore 屏障  | 禁止下面所有的普通写操作和上面的 volatile 读重排序。        |
 
-![img](images/thread/java-thread-x-key-volatile-3.png)
+![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-key-volatile-3.png)
 
-![img](images/thread/java-thread-x-key-volatile-4.png)
+
+
+![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-key-volatile-4.png)
 
 ## [#](#volatile-的应用场景) volatile 的应用场景
 

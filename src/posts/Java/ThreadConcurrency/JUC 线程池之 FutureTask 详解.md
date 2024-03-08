@@ -33,9 +33,9 @@ order: 18
 
 ## [#](#带着bat大厂的面试问题去理解futuretask) 带着BAT大厂的面试问题去理解FutureTask
 
-提示
-
-请带着这些问题继续后文，会很大程度上帮助你更好的理解FutureTask。@pdai
+> 提示
+>
+> 请带着这些问题继续后文，会很大程度上帮助你更好的理解FutureTask。@pdai
 
 - FutureTask用来解决什么问题的? 为什么会出现?
 - FutureTask类结构关系怎么样的?
@@ -133,9 +133,9 @@ private static final int INTERRUPTED  = 6;
 
 ![img](https://lixuanfengs.github.io/blog-images/vp/Java/java-thread-x-juc-futuretask-2.png)
 
-### [#](#构造函数) 构造函数
+### 构造函数
 
-- FutureTask(Callable<V> callable)
+- FutureTask(Callable`<V>` callable)
 
 ```java
 public FutureTask(Callable<V> callable) {
@@ -308,7 +308,7 @@ private V report(int s) throws ExecutionException {
 }
 ```
 
-### [#](#核心方法-awaitdone-boolean-timed-long-nanos) 核心方法 - awaitDone(boolean timed, long nanos)
+### [#](#核心方法-awaitdone-boolean-timed-long-nanos) 核心方法 awaitDone(boolean timed, long nanos)
 
 ```java
 private int awaitDone(boolean timed, long nanos)
@@ -538,3 +538,4 @@ public class CallDemo {
 }
 ```
 
+## [#](#参考文章) 参考文章
