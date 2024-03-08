@@ -1,6 +1,6 @@
 ---
 title: Java 多线程和并发
-icon: java
+icon: proxy
 date: 2024-03-06
 index: false
 timeline: false

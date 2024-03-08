@@ -1,6 +1,6 @@
 ---
 title: Java IO/NIO/AIO
-icon: java
+icon: IO
 date: 2024-03-06
 index: false
 timeline: false

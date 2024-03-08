@@ -25,7 +25,7 @@ export default MyTheme({
 
   logo: "/logo.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "lixuanfengs/Cactus",
 
   docsDir: "src",
 

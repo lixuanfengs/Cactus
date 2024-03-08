@@ -1,6 +1,6 @@
 ---
 title: Java 集合框架
-icon: java
+icon: list
 date: 2024-03-06
 index: false
 timeline: false
