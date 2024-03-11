@@ -4,19 +4,19 @@ title: 收藏
 icon: home
 heroImage: /logo.svg
 heroText: 你发现了有趣的地方~
-tagline: ✨穹顶之下，仰望繁星。✨
+tagline: 🍃 穹顶之下，仰望繁星。
 actions:
-  - text: 回到主页 🧭
+  - text: 回到主页 ⛅
     link: /
     type: primary
 
-  - text: 更新历史 💡
+  - text: 更新历史 🌚
     link: /timeline
 
-  - text: 关于本站 🛠
+  - text: 关于本站 🌵
     link: /about
 
-  - text: 绝美404 🎯
+  - text: 绝美404 ⛳
     link: /404
 
 features:
