@@ -10,7 +10,9 @@ import {
 import { gradientCoverPlugin } from "./plugins/vuepress-plugin-gradient-cover";
 import { hitokotoPlugin } from "./plugins/vuepress-plugin-hitokoto";
 import { shikiPlugin } from "@vuepress/plugin-shiki";
+import { getDirname, path } from "vuepress/utils";
 
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   //dest: "./dev-ops/nginx/html", // 自定义博客构建后，静态文件输出的路径
@@ -23,6 +25,13 @@ export default defineUserConfig({
       title: "Cactus's Blog",
       description: "仙人球的博客",
     },
+  },
+
+  alias: {
+    "@MyLink": path.resolve(__dirname, "./components/Mylink.vue"),
+    "@MyCoverLink": path.resolve(__dirname, "./components/MyCoverLink.vue"),
+    "@Design": path.resolve(__dirname, "./data/design.ts"),
+    "@Api": path.resolve(__dirname, "./data/api.ts"),
   },
 
   theme,

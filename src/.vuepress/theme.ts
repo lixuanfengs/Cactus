@@ -20,7 +20,7 @@ export default MyTheme({
     // 默认：
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
     // 自己的
-    "//at.alicdn.com/t/c/font_4094073_jxae0ac0poh.css",
+    "//at.alicdn.com/t/c/font_4094073_xwlrnbpdi8l.css",
   ],
 
   logo: "/logo.svg",

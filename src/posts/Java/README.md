@@ -1,5 +1,5 @@
 ---
-title: "java"
+title: "Java 知识体系"
 icon: java
 date: 2024-03-05
 index: false

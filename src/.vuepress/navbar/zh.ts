@@ -12,15 +12,21 @@ export const zhNavbar = navbar([
         prefix:"/posts/",
         children: [
           { text: "Java", icon: "java", link: "Java/" },
-          { text: "前端", icon: "code", link: "Web/" },
-          { text: "Linux", icon: "linux", link: "Linux/" },
           { text: "Python", icon: "python", link: "Python/" },
-          { text: "React", icon: "react", link: "cross-platform/ReactNative/" },
-          {
-            text: "Flutter",
-            icon: "hk-flutter",
-            link: "cross-platform/Flutter/",
-          },
+        ],
+      },
+      {
+        text: "前端",
+        prefix:"/webs/",
+        children: [
+          { text: "Web", icon: "code", link: "Web/" },
+        ],
+      },
+      {
+        text: "服务器",
+        prefix:"/linuxs/",
+        children: [
+          { text: "Linux", icon: "linux", link: "Linux/" },
         ],
       },
       {
@@ -42,11 +48,11 @@ export const zhNavbar = navbar([
     icon: "shoucang1",
     link: "/collect",
   },
-  {
-    text: "说说",
-    icon: "xiaoshuo1",
-    link: "/news/",
-  },
+  // {
+  //   text: "说说",
+  //   icon: "xiaoshuo1",
+  //   link: "/news/",
+  // },
   {
     text: "留言板",
     icon: "liuyanpinglun",
