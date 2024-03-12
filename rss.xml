@@ -6,8 +6,8 @@
     <link>https://cactusli.net/</link>
     <description>仙人球的博客</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 11 Mar 2024 09:24:27 GMT</pubDate>
-    <lastBuildDate>Mon, 11 Mar 2024 09:24:27 GMT</lastBuildDate>
+    <pubDate>Tue, 12 Mar 2024 01:39:22 GMT</pubDate>
+    <lastBuildDate>Tue, 12 Mar 2024 01:39:22 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -2621,10 +2621,10 @@
       <enclosure url="https://lixuanfengs.github.io/blog-images/vp/Java/java_jvm_classload_2.png" type="image/png"/>
     </item>
     <item>
-      <title>Java 基础之图谱.md</title>
+      <title>Java 基础之图谱</title>
       <link>https://cactusli.net/posts/Java/Foundation/Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%9B%BE%E8%B0%B1.html</link>
       <guid>https://cactusli.net/posts/Java/Foundation/Java%20%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%9B%BE%E8%B0%B1.html</guid>
-      <source url="https://cactusli.net/rss.xml">Java 基础之图谱.md</source>
+      <source url="https://cactusli.net/rss.xml">Java 基础之图谱</source>
       <description>本文主要对Java基础知识体系小结，同时结合一些Q&amp;A进行理解。 Java 基础之图谱 参考文档 知识体系 Q&amp;A Java 中应该使用什么数据类型来代表价格? 怎么将 byte 转换为 String? Java 中怎样将 bytes 转换为 long 类型? 我们能将 int 强制转换为 byte 类型的变量吗? 如果该值大于 byte 类型的范围，...</description>
       <category>Java</category>
       <pubDate>Tue, 05 Mar 2024 18:06:22 GMT</pubDate>
