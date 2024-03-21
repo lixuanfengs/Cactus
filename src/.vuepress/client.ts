@@ -5,6 +5,7 @@ import Layout from "./theme/layouts/Layout.vue";
 import News from "./theme/layouts/News.vue";
 import Wormhole from "./theme/components/Wormhole";
 import Travelling from "./theme/components/Travelling";
+import Qweather from "./theme/components/Qweather.vue";
 import "vuepress-theme-hope/presets/bounce-icon.scss";
 import packageJson from '../../package.json';
 export default defineClientConfig({
@@ -15,6 +16,7 @@ export default defineClientConfig({
     News,
   },
   enhance: ({ app }) => {
+    app.component("Qweather", Qweather);
     // app.component("Wormhole", Wormhole);
     // app.component("Travelling", Travelling);
   },

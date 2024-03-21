@@ -2,35 +2,37 @@ import { MyTheme } from "./theme/index";
 import {  zhNavbar } from "./navbar/index.js";
 import {  zhSidebar } from "./sidebar/index.js";
 
-import { MR_HOPE_AVATAR } from "./logo.js";
-
 
 export default MyTheme({
+  // 开启热重载
   hotReload: true,
+  // 启用主题颜色切换功能
   themeColor: true,
+  // 全屏功能开关
   fullscreen: true,
+  // 网站的主机名，用于 SEO 和一些社交分享功能
   hostname: "https://cactusli.net",
-
+  // 作者信息配置
   author: {
     name: "Cactus li",
     url: "https://cactusli.net",
   },
-
+  // 图标资源，可以添加多个来源
   iconAssets: [
     // 默认：
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
     // 自己的
     "//at.alicdn.com/t/c/font_4094073_xwlrnbpdi8l.css",
   ],
-
+  // 网站 logo 配置
   logo: "/logo.svg",
-
+   // 项目仓库地址，用于在页面上显示“在 GitHub 上编辑此页”链接
   repo: "lixuanfengs/Cactus",
-
+  // 文档所在目录
   docsDir: "src",
-
+  // 导航栏布局配置
   navbarLayout: {
-    start: ["Brand"],
+    start: ["Brand", "Qweather"],
     center: ["Links"],
     end: ["Language", "Repo", "Wormhole", "Travelling", "Outlook", "Search"],
   },
@@ -71,7 +73,7 @@ export default MyTheme({
       // MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
     },
   },
-
+  // 多语言配置
   locales: {
     "/": {
       // navbar
@@ -81,9 +83,9 @@ export default MyTheme({
       sidebar: zhSidebar,
 
       footer: "默认页脚",
-
+      // 是否显示页脚
       displayFooter: false,
-
+      // 博客描述和介绍页面路径
       blog: {
         description: "在这里，属于我自己的",
         intro: "/intro.html",
@@ -117,7 +119,7 @@ export default MyTheme({
     //   },
     // },
   },
-
+  // 页面加密配置
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
@@ -127,8 +129,9 @@ export default MyTheme({
 
   // enable it to preview all changes in time
   // hotReload: true,
-
+  // 插件配置
   plugins: {
+    // 启用博客插件
     blog: true,
 
     // install @waline/client before enabling it
