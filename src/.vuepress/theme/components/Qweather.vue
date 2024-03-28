@@ -18,7 +18,7 @@ onMounted(() => {
     window.WIDGET = {
       "CONFIG": {
         "modules": "0124", // 模块配置,控制显示哪些信息
-        "background": "5 ", // 背景设置
+        "background": "5", // 背景设置
         "tmpColor": "2c3e50", // 温度颜色
         "tmpSize": "16", // 温度大小
         "cityColor": "2c3e50", // 城市颜色
