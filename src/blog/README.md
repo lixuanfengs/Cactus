@@ -38,12 +38,12 @@ Vercel 的速度相对 GitHub Pages 更快，但 `*.vercel.app` 域名已受 DNS
 
 Vercel 部署步骤如下：
 
-1. 点击 [![Vercel](https://lixuanfengs.github.io/blog-images/cactus-blogs/68747470733a2f2f76657263656c2e636f6d2f627574746f6e)](https://vercel.com/new/clone?repository-url=https://github.com/lixuanfengs/Cactus/tree/gh-pages) 或将 `https://vercel.com/new/clone?repository-url=https://github.com/lixuanfengs/Cactus/tree/gh-pages` 中的 `rockbenben/LearnData` 改为 `你的用户名/仓库名`，然后会跳转至 Vercel 进行网页部署。如果你未登录，Vercel 提示你注册或登录，请使用 GitHub 账户进行快捷登录。
+1. 点击 [![Vercel](https://lixuanfengs.github.io/blog-images/cactus-blogs/68747470733a2f2f76657263656c2e636f6d2f627574746f6e)](https://vercel.com/new/clone?repository-url=https://github.com/lixuanfengs/Cactus/tree/gh-pages) 或将 `https://vercel.com/new/clone?repository-url=https://github.com/lixuanfengs/Cactus/tree/gh-pages` 中的 `rockbenben/Cactus` 改为 `你的用户名/仓库名`，然后会跳转至 Vercel 进行网页部署。如果你未登录，Vercel 提示你注册或登录，请使用 GitHub 账户进行快捷登录。
 2. 输入一个你喜欢的 Vercel 项目名称，默认 private 即可，然后点击 `Create`。
 
 ![image-20240307101726683](https://lixuanfengs.github.io/blog-images/cactus-blogs/image-20240307101726683.png)
 
-3. 接着，Vercel 会基于 LearnData 模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名。几十秒后，满屏的烟花会庆祝你部署成功。此时，点击 `Go to Dashboard` 跳转到应用的控制台。
+3. 接着，Vercel 会基于 Cactus 模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名。几十秒后，满屏的烟花会庆祝你部署成功。此时，点击 `Go to Dashboard` 跳转到应用的控制台。
 
    ![image-20240307101851481](https://lixuanfengs.github.io/blog-images/cactus-blogs/image-20240307101851481.png)
 
