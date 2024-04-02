@@ -1,7 +1,8 @@
 ---
 title: 布局与功能禁用
-icon: gears
-order: 4
+icon: config
+order: 3
+index: false
 category:
   - 使用指南
 tag:
@@ -19,7 +20,7 @@ prev: false
 next: false
 comment: false
 footer: false
-
+article: false
 backtotop: false
 ---
 

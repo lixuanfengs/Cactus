@@ -38,12 +38,19 @@ export const zhSidebar = sidebar({
       // collapsible: true,
       children: [
         {
-          text: "Web",
+          text: "ES6",
           icon: "code",
-          prefix: "Web/",
-          link: "Web/",
+          prefix: "ES6/",
+          link: "ES6/",
           // children: ["Browser/", "JavaScript/", "CSS/", "node/", "Vue/"],
         },
+        {
+          text: "TypeScript",
+          icon: "code",
+          prefix: "TypeScript/",
+          link: "TypeScript/",
+          // children: ["Browser/", "JavaScript/", "CSS/", "node/", "Vue/"],
+        }
       ],
     },
     {
@@ -62,10 +69,18 @@ export const zhSidebar = sidebar({
       ],
     },
     {
-      text: "软件/工具教程",
+      text: "工具|软件",
       icon: "software",
       prefix: "tutorial/",
       link: "tutorial",
+      children: [
+        {
+          text: "Maven",
+          icon: "java",
+          prefix: "Maven/",
+          link: "Maven/",
+        }
+      ],
     },
     {
       text: "博客相关",
@@ -94,4 +109,14 @@ export const zhSidebar = sidebar({
     },
   ],
   "/posts/Java/": "structure",
+  "/posts/Python/": "structure",
+  "/linuxs": "structure",
+  "/tutorial": "structure",
+  "/webs/ES6/": "structure",
+  "/webs/TypeScript/": "structure",
+  "/blog": "structure",
+
+
+
+
 });

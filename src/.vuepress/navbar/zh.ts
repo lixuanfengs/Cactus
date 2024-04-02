@@ -19,7 +19,8 @@ export const zhNavbar = navbar([
         text: "前端",
         prefix:"/webs/",
         children: [
-          { text: "Web", icon: "code", link: "Web/" },
+          { text: "ES6", icon: "code", link: "ES6/" },
+          { text: "TypeScript", icon: "code", link: "TypeScript/" },
         ],
       },
       {
@@ -39,7 +40,7 @@ export const zhNavbar = navbar([
     ],
   },
   {
-    text: "软件教程",
+    text: "工具|软件",
     icon: "ruanjian",
     link: "/tutorial/",
   },
