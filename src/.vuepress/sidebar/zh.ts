@@ -79,6 +79,12 @@ export const zhSidebar = sidebar({
           icon: "java",
           prefix: "Maven/",
           link: "Maven/",
+        },
+        {
+          text: "服务器基础环境配置",
+          icon: "java",
+          prefix: "Devops/",
+          link: "Devops/",
         }
       ],
     },
@@ -115,8 +121,6 @@ export const zhSidebar = sidebar({
   "/webs/ES6/": "structure",
   "/webs/TypeScript/": "structure",
   "/blog": "structure",
-
-
 
 
 });

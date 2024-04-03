@@ -8,10 +8,9 @@ article: false
 dir:
   order: 1
 ---
-
 :::info
 这里放置 ES6 前端相关内容
 :::
-
 ---
 
+<AutoCatalog />
