@@ -1,0 +1,1 @@
+import{i as r}from"./app-CF_zTObI.js";const a=async()=>{try{const{pageviewCount:e}=await r(()=>import("./app-CF_zTObI.js").then(t=>t.Z),[]);return e({serverURL:COMMENT_OPTIONS.serverURL})}catch{console.error("@waline/client is not installed!")}};export{a as updatePageview};
