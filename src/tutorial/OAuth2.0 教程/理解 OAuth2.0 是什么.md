@@ -124,7 +124,7 @@ A步骤中，客户端申请认证的URI，包含以下参数：
 
 下面是一个例子。
 
-> ```
+> ```shell
 > > GET /authorize?response_type=code&client_id=s6BhdRkqt3&state=xyz
 > >         &redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fcb HTTP/1.1
 > > Host: server.example.com
@@ -138,7 +138,7 @@ C步骤中，服务器回应客户端的URI，包含以下参数：
 
 下面是一个例子。
 
-> ```
+> ```shell
 > > HTTP/1.1 302 Found
 > > Location: https://client.example.com/cb?code=SplxlOBeZQQYbYS6WxSbIA
 > >           &state=xyz
@@ -154,7 +154,7 @@ D步骤中，客户端向认证服务器申请令牌的HTTP请求，包含以下
 
 下面是一个例子。
 
-> ```
+> ```shell
 > > POST /token HTTP/1.1
 > > Host: server.example.com
 > > Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
@@ -175,7 +175,7 @@ E步骤中，认证服务器发送的HTTP回复，包含以下参数：
 
 下面是一个例子。
 
-> ```
+> ```shell
 > >      HTTP/1.1 200 OK
 > >      Content-Type: application/json;charset=UTF-8
 > >      Cache-Control: no-store
@@ -227,7 +227,7 @@ A步骤中，客户端发出的HTTP请求，包含以下参数：
 
 下面是一个例子。
 
-> ```
+> ```shell
 > >     GET /authorize?response_type=token&client_id=s6BhdRkqt3&state=xyz
 > >         &redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fcb HTTP/1.1
 > >     Host: server.example.com
@@ -244,7 +244,7 @@ C步骤中，认证服务器回应客户端的URI，包含以下参数：
 
 下面是一个例子。
 
-> ```
+> ```shell
 > >      HTTP/1.1 302 Found
 > >      Location: http://example.com/cb#access_token=2YotnFZFEjr1zCsicMWpAA
 > >                &state=xyz&token_type=example&expires_in=3600
@@ -280,7 +280,7 @@ B步骤中，客户端发出的HTTP请求，包含以下参数：
 
 下面是一个例子。
 
-> ```
+> ```shell
 > >      POST /token HTTP/1.1
 > >      Host: server.example.com
 > >      Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
@@ -292,7 +292,7 @@ B步骤中，客户端发出的HTTP请求，包含以下参数：
 
 C步骤中，认证服务器向客户端发送访问令牌，下面是一个例子。
 
-> ```
+> ```shell
 > >      HTTP/1.1 200 OK
 > >      Content-Type: application/json;charset=UTF-8
 > >      Cache-Control: no-store
@@ -329,7 +329,7 @@ A步骤中，客户端发出的HTTP请求，包含以下参数：
 - grant*type：表示授权类型，此处的值固定为"client*credentials"，必选项。
 - scope：表示权限范围，可选项。
 
-> ```
+> ```shell
 > >      POST /token HTTP/1.1
 > >      Host: server.example.com
 > >      Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
@@ -343,7 +343,7 @@ A步骤中，客户端发出的HTTP请求，包含以下参数：
 
 B步骤中，认证服务器向客户端发送访问令牌，下面是一个例子。
 
-> ```
+> ```shell
 > >      HTTP/1.1 200 OK
 > >      Content-Type: application/json;charset=UTF-8
 > >      Cache-Control: no-store
@@ -372,7 +372,7 @@ B步骤中，认证服务器向客户端发送访问令牌，下面是一个例�
 
 下面是一个例子。
 
-> ```
+> ```shell
 > >      POST /token HTTP/1.1
 > >      Host: server.example.com
 > >      Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW

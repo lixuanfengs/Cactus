@@ -37,7 +37,7 @@ OAuth 2.0 的标准是 [RFC 6749](https://tools.ietf.org/html/rfc6749) 文件。
 
 第一步，A 网站提供一个链接，用户点击后就会跳转到 B 网站，授权用户数据给 A 网站使用。下面就是 A 网站跳转 B 网站的一个示意链接。
 
-> ```
+> ```shell
 > > https://b.com/oauth/authorize?
 > >   response_type=code&
 > >   client_id=CLIENT_ID&
@@ -52,7 +52,7 @@ OAuth 2.0 的标准是 [RFC 6749](https://tools.ietf.org/html/rfc6749) 文件。
 
 第二步，用户跳转后，B 网站会要求用户登录，然后询问是否同意给予 A 网站授权。用户表示同意，这时 B 网站就会跳回`redirect_uri`参数指定的网址。跳转时，会传回一个授权码，就像下面这样。
 
-> ```
+> ```shell
 > > https://a.com/callback?code=AUTHORIZATION_CODE
 > >
 > ```
@@ -63,7 +63,7 @@ OAuth 2.0 的标准是 [RFC 6749](https://tools.ietf.org/html/rfc6749) 文件。
 
 第三步，A 网站拿到授权码以后，就可以在后端，向 B 网站请求令牌。
 
-> ```
+> ```shell
 > > https://b.com/oauth/token?
 > >  client_id=CLIENT_ID&
 > >  client_secret=CLIENT_SECRET&
@@ -79,7 +79,7 @@ OAuth 2.0 的标准是 [RFC 6749](https://tools.ietf.org/html/rfc6749) 文件。
 
 第四步，B 网站收到请求以后，就会颁发令牌。具体做法是向`redirect_uri`指定的网址，发送一段 JSON 数据。
 
-> ```
+> ```shell
 > > {    
 > >   "access_token":"ACCESS_TOKEN",
 > >   "token_type":"bearer",
@@ -102,7 +102,7 @@ OAuth 2.0 的标准是 [RFC 6749](https://tools.ietf.org/html/rfc6749) 文件。
 
 第一步，A 网站提供一个链接，要求用户跳转到 B 网站，授权用户数据给 A 网站使用。
 
-> ```
+> ```shell
 > > https://b.com/oauth/authorize?
 > >   response_type=token&
 > >   client_id=CLIENT_ID&
@@ -115,7 +115,7 @@ OAuth 2.0 的标准是 [RFC 6749](https://tools.ietf.org/html/rfc6749) 文件。
 
 第二步，用户跳转到 B 网站，登录后同意给予 A 网站授权。这时，B 网站就会跳回`redirect_uri`参数指定的跳转网址，并且把令牌作为 URL 参数，传给 A 网站。
 
-> ```
+> ```shell
 > > https://a.com/callback#token=ACCESS_TOKEN
 > >
 > ```
@@ -134,7 +134,7 @@ OAuth 2.0 的标准是 [RFC 6749](https://tools.ietf.org/html/rfc6749) 文件。
 
 第一步，A 网站要求用户提供 B 网站的用户名和密码。拿到以后，A 就直接向 B 请求令牌。
 
-> ```
+> ```shell
 > > https://oauth.b.com/token?
 > >   grant_type=password&
 > >   username=USERNAME&
@@ -155,7 +155,7 @@ OAuth 2.0 的标准是 [RFC 6749](https://tools.ietf.org/html/rfc6749) 文件。
 
 第一步，A 应用在命令行向 B 发出请求。
 
-> ```
+> ```shell
 > > https://oauth.b.com/token?
 > >   grant_type=client_credentials&
 > >   client_id=CLIENT_ID&
@@ -175,7 +175,7 @@ A 网站拿到令牌以后，就可以向 B 网站的 API 请求数据了。
 
 此时，每个发到 API 的请求，都必须带有令牌。具体做法是在请求的头信息，加上一个`Authorization`字段，令牌就放在这个字段里面。
 
-> ```
+> ```shell
 > > curl -H "Authorization: Bearer ACCESS_TOKEN" \
 > > "https://api.b.com"
 > >
@@ -189,7 +189,7 @@ A 网站拿到令牌以后，就可以向 B 网站的 API 请求数据了。
 
 具体方法是，B 网站颁发令牌的时候，一次性颁发两个令牌，一个用于获取数据，另一个用于获取新的令牌（refresh token 字段）。令牌到期前，用户使用 refresh token 发一个请求，去更新令牌。
 
-> ```
+> ```shell
 > > https://b.com/oauth/token?
 > >   grant_type=refresh_token&
 > >   client_id=CLIENT_ID&
