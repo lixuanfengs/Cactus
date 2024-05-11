@@ -1,1 +1,0 @@
-import{i as o,Y as n}from"./app-B2NamrPB.js";const s=async()=>{try{const{pageviewCount:e}=await o(()=>import("./app-B2NamrPB.js").then(r=>r.Z),[]),t=n();return e({serverURL:t.serverURL})}catch{console.error("@waline/client is not installed!")}};export{s as updatePageview};

@@ -1,0 +1,1 @@
+import{i as o,Y as n}from"./app-2tyDjKaQ.js";const s=async()=>{try{const{pageviewCount:e}=await o(()=>import("./app-2tyDjKaQ.js").then(r=>r.Z),[]),t=n();return e({serverURL:t.serverURL})}catch{console.error("@waline/client is not installed!")}};export{s as updatePageview};
