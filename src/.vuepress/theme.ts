@@ -32,8 +32,8 @@ export default MyTheme({
   docsDir: "src",
   // 导航栏布局配置
   navbarLayout: {
-    // start: ["Brand", "Qweather"],
-    start: ["Qweather"],
+    start: ["Brand"],
+   // start: ["Qweather"],
     center: ["Links"],
     end: ["Language", "Repo", "Wormhole", "Travelling", "Outlook", "Search"],
   },

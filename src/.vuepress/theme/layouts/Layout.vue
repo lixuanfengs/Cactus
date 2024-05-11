@@ -31,14 +31,14 @@ import BloggerInfo from "@theme-hope/modules/blog/components/BloggerInfo";
 import HomePage from "@theme-hope/components/HomePage";
 import NormalPage from "@theme-hope/components/NormalPage";
 import SkipLink from "@theme-hope/components/SkipLink";
-import FadeSlideY from "@theme-hope/components/transitions/FadeSlideY";
+import { FadeSlideY } from "@theme-hope/components/transitions/FadeSlideY";
 import Sponsor from "../components/Sponsor.vue";
 import {
   useThemeData,
   useThemeLocaleData,
   useWindowSize,
 } from "@theme-hope/composables/index";
-declare const ENABLE_BLOG: boolean
+const ENABLE_BLOG = true
 const themeData = useThemeData();
 const themeLocale = useThemeLocaleData();
 const page = usePageData();
@@ -51,4 +51,5 @@ const sidebarDisplay = computed(() =>
       "mobile"
     : "none"
 );
+debugger
 </script>

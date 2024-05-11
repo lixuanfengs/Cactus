@@ -1,6 +1,6 @@
 ---
-title: "Cactus-vue-pro 开发手册"
-subtitle: "Cactus-vue-pro 开发手册"
+title: "DDD 技术体系— 理论"
+subtitle: "DDD 技术体系— 理论"
 date: 2024-4-11 10:54:20
 category:
   - DDD 技术体系

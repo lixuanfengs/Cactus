@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import DropTransition from "@theme-hope/components/transitions/DropTransition";
+import { DropTransition } from "@theme-hope/components/transitions/DropTransition";
 import type { Article } from '@vuepress/plugin-blog/client';
 import Pagination from "@theme-hope/modules/blog/components/Pagination";
 import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index";
