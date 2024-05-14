@@ -6,7 +6,7 @@ category:
   - devops
 tag:
   - devops
-order: 1
+order: 4
 ---
 
 ## IntelliJ IDEA Deployment 教程
