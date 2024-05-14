@@ -61,6 +61,7 @@ order: 4
 
 ```shell
 sudo tee /sg-work/cactus-server/start.sh <<-'EOF'
+
 #!/bin/bash
 
 
@@ -85,15 +86,15 @@ handle_file_change() {
             echo "File/Directory has been replaced or modified at $file_path."
             sleep 15  # 等待上传完成
 
-            if [ "$is_directory" = "yes" ]; then
-                if [ -d "$target_path" ]; then
-                    rm -r "$target_path" && echo "Old directory removed: $target_path" || { echo "Failed to remove old directory: $target_path"; continue; }
-                fi
-            else
-                if [ -e "$target_path" ]; then
-                    rm "$target_path" && echo "Old file removed: $target_path" || { echo "Failed to remove old file: $target_path"; continue; }
-                fi
-            fi
+#            if [ "$is_directory" = "yes" ]; then
+#                if [ -d "$target_path" ]; then
+#                    rm -r "$target_path" && echo "Old directory removed: $target_path" || { echo "Failed to remove old directory: $target_path"; continue; }
+#                fi
+#            else
+#                if [ -e "$target_path" ]; then
+#                    rm "$target_path" && echo "Old file removed: $target_path" || { echo "Failed to remove old file: $target_path"; continue; }
+#                fi
+#            fi
 
             mv "$file_path" "$target_path" && echo "New $file_path moved to $target_path" || { echo "Failed to move $file_path to $target_path"; continue; }
 
@@ -112,9 +113,9 @@ handle_file_change() {
 # 启动后端服务模块的监听
 handle_file_change "/home/cactus/cactus-server.jar" "/sg-work/cactus-server/cactus-server.jar" "/sg-work/cactus-server/Dockerfile ." "no" &
 # 启动后端页面模块的监听
-handle_file_change "/home/cactus/dist-pro" "/sg-work/nginx/html/cactus-ui-admin-vue3" "" "yes" &
+handle_file_change "/home/cactus/dist-dev" "/sg-work/nginx/html/cactus-ui-admin-vue3" "" "yes" &
 # 启动门户页面模块的监听
-handle_file_change "/home/cactus/dist-pro" "/sg-work/nginx/html/cactus-ui-web-vue2" "" "yes" &
+handle_file_change "/home/cactus/dist" "/sg-work/nginx/html/cactus-ui-web-vue2" "" "yes" &
 
 wait
 
