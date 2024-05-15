@@ -86,20 +86,19 @@ handle_file_change() {
             echo "File/Directory has been replaced or modified at $file_path."
             sleep 15  # 等待上传完成
 
-#            if [ "$is_directory" = "yes" ]; then
-#                if [ -d "$target_path" ]; then
-#                    rm -r "$target_path" && echo "Old directory removed: $target_path" || { echo "Failed to remove old directory: $target_path"; continue; }
-#                fi
-#            else
-#                if [ -e "$target_path" ]; then
-#                    rm "$target_path" && echo "Old file removed: $target_path" || { echo "Failed to remove old file: $target_path"; continue; }
-#                fi
-#            fi
-
-            mv "$file_path" "$target_path" && echo "New $file_path moved to $target_path" || { echo "Failed to move $file_path to $target_path"; continue; }
+            if [ "$is_directory" = "yes" ]; then
+                # 对于目录，可以考虑使用 rsync 进行同步而不是删除和移动
+                rsync -av --delete "$file_path/" "$target_path/"
+                echo "Directory synchronized: $target_path"
+            else
+                # 对于文件，使用原子操作进行替换
+                mv "$file_path" "$target_path.tmp" && \
+                mv -f "$target_path.tmp" "$target_path" && \
+                echo "New file moved to $target_path"
+            fi
 
             if [ -n "$dockerfile_path" ]; then
-                docker build -t cactus-server -f $dockerfile_path && echo "Docker build successful." || { echo "Docker build failed."; continue; }
+                docker build -t cactus-server -f "$dockerfile_path" . && echo "Docker build successful." || { echo "Docker build failed."; continue; }
                 deploy_cactus_server
             fi
 
