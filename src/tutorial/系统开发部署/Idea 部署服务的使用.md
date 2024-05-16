@@ -64,7 +64,6 @@ sudo tee /sg-work/cactus-server/start.sh <<-'EOF'
 
 #!/bin/bash
 
-
 # 定义一个部署函数
 deploy_cactus_server() {
     echo "Start deploying..."
@@ -72,26 +71,28 @@ deploy_cactus_server() {
     echo "Deployment done."
 }
 
+
 # 定义一个通用的检查和处理文件变化的函数
 handle_file_change() {
     local file_path="$1"
     local target_path="$2"
     local dockerfile_path="$3"
     local is_directory="$4"
-    local initial_stat="$(stat "$file_path" --printf="%i %Y")"
 
     while true; do
-        local current_stat=$(stat "$file_path" --printf="%i %Y")
-        if [ "$current_stat" != "$initial_stat" ]; then
+
+        if [ -d "$file_path" ] || [ -f "$file_path" ]; then
             echo "File/Directory has been replaced or modified at $file_path."
             sleep 15  # 等待上传完成
 
             if [ "$is_directory" = "yes" ]; then
-                # 对于目录，可以考虑使用 rsync 进行同步而不是删除和移动
+                # 对于目录，使用 rsync 进行同步
                 rsync -av --delete "$file_path/" "$target_path/"
                 echo "Directory synchronized: $target_path"
+                rm -r "$file_path" && echo "Old directory removed: $file_path" || { echo "Failed to remove old directory: $target_path"; continue; }
             else
                 # 对于文件，使用原子操作进行替换
+                rm "$target_path"
                 mv "$file_path" "$target_path.tmp" && \
                 mv -f "$target_path.tmp" "$target_path" && \
                 echo "New file moved to $target_path"
@@ -102,7 +103,9 @@ handle_file_change() {
                 deploy_cactus_server
             fi
 
-            initial_stat=$current_stat
+          else
+                 echo "File or directory does not exist. $file_path."
+
         fi
 
         sleep 15
@@ -110,11 +113,12 @@ handle_file_change() {
 }
 
 # 启动后端服务模块的监听
-handle_file_change "/home/cactus/cactus-server.jar" "/sg-work/cactus-server/cactus-server.jar" "/sg-work/cactus-server/Dockerfile ." "no" &
+handle_file_change "/home/cactus/cactus-server.jar" "/sg-work/cactus-server/cactus-server.jar" "/sg-work/cactus-server/Dockerfile" "no" &
 # 启动后端页面模块的监听
 handle_file_change "/home/cactus/dist-dev" "/sg-work/nginx/html/cactus-ui-admin-vue3" "" "yes" &
 # 启动门户页面模块的监听
 handle_file_change "/home/cactus/dist" "/sg-work/nginx/html/cactus-ui-web-vue2" "" "yes" &
+
 
 wait
 
