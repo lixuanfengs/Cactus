@@ -37,7 +37,7 @@ curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2
 systemctl start docker
 ```
 
-> 离线安装 Docke
+> 离线安装 Docker
 >
 > 1. Go to [`https://download.docker.com/linux/ubuntu/dists/`](https://download.docker.com/linux/ubuntu/dists/). 转到 `https://download.docker.com/linux/ubuntu/dists/` 。
 >
