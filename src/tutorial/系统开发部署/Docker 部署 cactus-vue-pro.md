@@ -37,6 +37,41 @@ curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2
 systemctl start docker
 ```
 
+> 离线安装 Docke
+>
+> 1. Go to [`https://download.docker.com/linux/ubuntu/dists/`](https://download.docker.com/linux/ubuntu/dists/). 转到 `https://download.docker.com/linux/ubuntu/dists/` 。
+>
+> 2. Select your Ubuntu version in the list.
+>    在列表中选择您的 Ubuntu 版本。
+>
+> 3. Go to `pool/stable/` and select the applicable architecture (`amd64`, `armhf`, `arm64`, or `s390x`).
+>    转到 `pool/stable/` 并选择适用的体系结构（ `amd64` 、 `armhf` `arm64` 、 或 `s390x` ）。
+>
+> 4. Download the following `deb` files for the Docker Engine, CLI, containerd, and Docker Compose packages:
+>    下载适用于 Docker Engine、CLI、containerd 和 Docker Compose 包的以下 `deb` 文件：
+>
+>    - `containerd.io_<version>_<arch>.deb`
+>    - `docker-ce_<version>_<arch>.deb`
+>    - `docker-ce-cli_<version>_<arch>.deb`
+>    - `docker-buildx-plugin_<version>_<arch>.deb`
+>    - `docker-compose-plugin_<version>_<arch>.deb`
+>
+> 5. Install the `.deb` packages. Update the paths in the following example to where you downloaded the Docker packages.
+>    安装 `.deb` 软件包。将以下示例中的路径更新为下载 Docker 包的位置。
+>
+>    
+>
+>    ```console
+>    $ sudo dpkg -i ./containerd.io_<version>_<arch>.deb \
+>      ./docker-ce_<version>_<arch>.deb \
+>      ./docker-ce-cli_<version>_<arch>.deb \
+>      ./docker-buildx-plugin_<version>_<arch>.deb \
+>      ./docker-compose-plugin_<version>_<arch>.deb
+>    ```
+>
+>    The Docker daemon starts automatically.
+>    Docker 守护程序会自动启动。
+
 ## 2. 配置 MySQL
 
 ### 2.1 安装 MySQL（可选）
