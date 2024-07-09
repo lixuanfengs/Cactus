@@ -72,6 +72,79 @@ systemctl start docker
 >    The Docker daemon starts automatically.
 >    Docker 守护程序会自动启动。
 
+### 1.1 Idea 远程连接 Docker
+
+编辑 docker.service 文件
+
+```shell
+vim /lib/systemd/system/docker.service
+```
+
+ExecStart 中添加：`-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock`
+
+```shell
+[Unit]
+Description=Docker Application Container Engine
+Documentation=https://docs.docker.com
+After=network-online.target docker.socket firewalld.service containerd.service time-set.target
+Wants=network-online.target containerd.service
+Requires=docker.socket
+
+[Service]
+Type=notify
+# the default is not to use systemd for cgroups because the delegate issues still
+# exists and systemd currently does not support the cgroup feature set required
+# for containers run by docker
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://1.0.0.0:2375 -H unix:///var/run/docker.sock --containerd=/run/containerd/containerd.sock
+ExecReload=/bin/kill -s HUP $MAINPID
+TimeoutStartSec=0
+RestartSec=2
+Restart=always
+
+# Note that StartLimit* options were moved from "Service" to "Unit" in systemd 229.
+# Both the old, and new location are accepted by systemd 229 and up, so using the old location
+# to make them work for either version of systemd.
+StartLimitBurst=3
+
+# Note that StartLimitInterval was renamed to StartLimitIntervalSec in systemd 230.
+# Both the old, and new name are accepted by systemd 230 and up, so using the old name to make
+# this option work for either version of systemd.
+StartLimitInterval=60s
+
+# Having non-zero Limit*s causes performance problems due to accounting overhead
+# in the kernel. We recommend using cgroups to do container-local accounting.
+LimitNPROC=infinity
+LimitCORE=infinity
+
+# Comment TasksMax if your systemd version does not support it.
+# Only systemd 226 and above support this option.
+TasksMax=infinity
+
+# set delegate yes so that systemd does not reset the cgroups of docker containers
+Delegate=yes
+
+# kill only the docker process, not all processes in the cgroup
+KillMode=process
+OOMScoreAdjust=-500
+
+[Install]
+WantedBy=multi-user.target
+```
+
+加载 systemd 管理器的配置并重启 Docker
+
+```shell
+#加载 systemd 管理器的配置
+systemctl daemon-reload
+# 重启
+systemctl restart docker
+```
+
+```shell
+# 测试
+curl http://127.0.0.1:2375/info
+```
+
 ## 2. 配置 MySQL
 
 ### 2.1 安装 MySQL（可选）
