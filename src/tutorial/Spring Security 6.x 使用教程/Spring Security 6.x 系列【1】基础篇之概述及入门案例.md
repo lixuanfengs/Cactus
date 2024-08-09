@@ -14,7 +14,7 @@ order: 1
 
 **本系列学习路线：**
 
-![image-20231215180957948](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231215180957948.png)
+![image-20231215180957948](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231215180957948.png)
 
 ## 2. 安全框架
 
@@ -182,10 +182,10 @@ public class AdminController {
 
 项目启动成功后，浏览器访问 http://127.0.0.1:8888/admin/testString 接口。因为未登录，所以被 Spring Security 拦截到登录界面。如下图所示：
 
-![image-20231215144457224](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231215144457224.png)
+![image-20231215144457224](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231215144457224.png)
 
 因为我们没有**自定义**登录界面，所以默认会使用 [DefaultLoginPageGeneratingFilter](https://github.com/spring-projects/spring-security/blob/master/web/src/main/java/org/springframework/security/web/authentication/ui/DefaultLoginPageGeneratingFilter.java) 类，生成上述界面。
 
 输入在`  application.yml` 中配置的用户名密码：user/test 进行登录系统。登录完成后，因为 Spring Security 会记录被拦截的访问地址，所以浏览器自动动跳转 http://127.0.0.1:8888/admin/testString 接口。访问结果如下图所示：
 
-![image-20231215144951292](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231215144951292.png)
+![image-20231215144951292](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231215144951292.png)

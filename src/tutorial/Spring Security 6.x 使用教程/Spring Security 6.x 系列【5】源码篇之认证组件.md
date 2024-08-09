@@ -42,7 +42,7 @@ order: 5
 
 `SecurityContextHolder` 是 Spring Security 中的一个核心类，用于存储和访问当前应用程序执行的安全上下文（SecurityContext）。`SecurityContext` 包含了当前应用程序执行的安全信息，例如认证主体（Principal）、授予的权限（Granted Authorities）等。
 
-![securitycontextholder](https://lixuanfengs.github.io/blog-images/Spring Security6.x/securitycontextholder.png)
+![securitycontextholder](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/securitycontextholder.png)
 
 当用户认证成功后，会将 `SecurityContext` 设置到`SecurityContextHolder`中，后续流程可以通过 `SecurityContextHolder `静态方法直接获取用户信息：
 
@@ -82,7 +82,7 @@ void setAuthentication(Authentication authentication);
 
 该接口的实现类 `SecurityContextImpl` 也很简单：
 
-![image-20240118171722859](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240118171722859.png)
+![image-20240118171722859](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240118171722859.png)
 
 ### 3.3 Authentication
 
@@ -114,7 +114,7 @@ public interface Authentication extends Principal, Serializable {
 
 `Authentication ` 有很多实现类，对应了不同的认证方式，比如记住的身份验证时，使用的是 `RememberMeAuthenticationToken`
 
-![image-20240118174805422](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240118174805422.png)
+![image-20240118174805422](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240118174805422.png)
 
 ### 3.4 GrantedAuthority
 
@@ -203,13 +203,13 @@ public class ProviderManager implements AuthenticationManager, MessageSourceAwar
 
 `ProviderManager` 内部包含多个 `AuthenticationProvider`（认证提供者），在调用 `ProviderManager` 的 `authenticate` 方法时，会循环遍历所有的 `AuthenticationProvider`。认证过程会一直持续，直到某个提供者返回认证成功，此时整个认证过程结束；如果所有提供者都无法完成认证，那么最终会返回认证失败。
 
-![providermanager](https://lixuanfengs.github.io/blog-images/Spring Security6.x/providermanager.png)
+![providermanager](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/providermanager.png)
 
 ### 3.7 AuthenticationProvider
 
 每个`AuthenticationProvider`对应一种认证方式，执行实际的认证处理逻辑，比如**用户名密码用**的是`DaoAuthenticationProvider`：
 
-![image-20240118180310737](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240118180310737.png)
+![image-20240118180310737](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240118180310737.png)
 
 通过向 `ProviderManager` 注入多个 `AuthenticationProvider`，可以实现对认证方式的自定义扩展。例如，可以添加支持手机验证码登录的 `AuthenticationProvider`，从而实现多种认证方式的灵活组合。
 
@@ -219,7 +219,7 @@ public class ProviderManager implements AuthenticationManager, MessageSourceAwar
 
 几个常见的 `AuthenticationEntryPoint` 实现包括：
 
-![image-20240118180728322](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240118180728322.png)
+![image-20240118180728322](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240118180728322.png)
 
 比如`LoginUrlAuthenticationEntryPoint`，会在表单登录失败时，执行重定向（或转发）到登录表单`URL`。
 

@@ -34,7 +34,7 @@ SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Excepti
 
 在使用Spring Security时，定制一些安全规则是不可避免的。然而，6.0版本及其之前版本的配置方式发生了较大变化。之前的做法通常是继承`WebSecurityConfigurerAdapter`类，并重写其中的方法，如下所示：
 
-![image-20240119093845451](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240119093845451.png)
+![image-20240119093845451](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240119093845451.png)
 
 `Spring Security 6.x 及以后的版本中已经删除 `WebSecurityConfigurerAdapter`，新版中需要按照以下方式 来配置`HttpSecurity` 和 `WebSecurity` ：
 
@@ -96,7 +96,7 @@ public Object test() {
 
 未登录时访问接口，会**重定向到登录页**，流程图如下说示：
 
-![image-20240119111427881](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240119111427881.png)
+![image-20240119111427881](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240119111427881.png)
 
 流程图说明：
 
@@ -110,7 +110,7 @@ public Object test() {
 
 访问上述接口地址，在`Spring Security 6.0系列【4】源码篇之默认过滤器` 中，有介绍请求最开始是到达`FilterChainProxy`，由它来调用`SecurityFilterChain`中的过滤器，`/test`是没有经过认证的，依次通过下述所有过滤器。
 
-![image-20240119112512670](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240119112512670.png)
+![image-20240119112512670](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240119112512670.png)
 
 在经过最后一个过滤器 `AuthorizationFilter` 时，进行了最终的权限校验。如果当前请求缺乏执行所需操作的权限，那么会触发抛出 `AccessDeniedException` 异常。这表示请求被拒绝，因为用户没有足够的权限执行相应的操作。
 
@@ -133,17 +133,17 @@ public Object test() {
 
 首先，`AuthorizationFilter`会提取当前用户的认证信息。由于当前请求尚未经过认证，因此用户将是由`AnonymousAuthenticationFilter`创建的**匿名用户**。
 
-![image-20240119175448941](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240119175448941.png)
+![image-20240119175448941](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240119175448941.png)
 
 接着，使用`AuthorizationManager` 授权管理器对当前的认证信息进行检查。由于当前用户是**匿名用户**，因此判定当前请求无权访问，并触发抛出 `AccessDeniedException` 异常。
 
-![image-20240119175819405](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240119175819405.png)
+![image-20240119175819405](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240119175819405.png)
 
 ### 3.2 异常处理
 
 抛出的`AccessDeniedException`异常会被`ExceptionTranslationFilter`捕获：
 
-![image-20240119180100744](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240119180100744.png)
+![image-20240119180100744](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240119180100744.png)
 
 `ExceptionTranslationFilter`根据异常类型进行相应处理：
 
@@ -246,7 +246,7 @@ public Object test() {
 
 **重定向**后浏览器地址变为`http://localhost:8888/login`，发起`GET`请求，此时又会开始执行过滤器：
 
-![image-20240122110748749](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240122110748749.png)
+![image-20240122110748749](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240122110748749.png)
 
 在经过`DefaultLoginPageGeneratingFilter`时，进行默认登录页的处理。在这个过滤器中，维护了许多参数，用于配置和定制默认登录页。
 
@@ -308,11 +308,11 @@ public Object test() {
 
 最终，默认的登录页面就展示出来了：
 
-![image-20240122112155371](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240122112155371.png)
+![image-20240122112155371](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240122112155371.png)
 
 ## 4. 表单登录
 
-![image-20240122125832774](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240122125832774.png)
+![image-20240122125832774](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240122125832774.png)
 
 **流程说明：**
 
@@ -331,7 +331,7 @@ public Object test() {
 
 在该过滤器的 `doFilter` 方法中，实际上执行的是其父类 `AbstractAuthenticationProcessingFilter.doFilter` 方法。这是一个抽象类，采用了模板设计模式，主要用于执行认证过滤器。根据不同的认证方式，它会执行不同子类的认证逻辑。通过观察其实现类，我们可以看到 `Security` 提供了多种认证方式。
 
-![image-20240123102917835](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240123102917835.png)
+![image-20240123102917835](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240123102917835.png)
 
 `AbstractAuthenticationProcessingFilter`的`doFilter`方法，几乎完成了认证的所有流程。
 
@@ -405,15 +405,15 @@ UsernamePasswordAuthenticationFilter`的`attemptAuthentication`方法，该方�
 
 `UsernamePasswordAuthenticationToken`刚创建时，包含了输入的**用户名密码**、访问`IP`、`sessionID`等信息，这时状态为**未认证**。
 
-![image-20240123152053479](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240123152053479.png)
+![image-20240123152053479](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240123152053479.png)
 
 认证管理器`ProviderManager`中包含多个认证提供者`AuthenticationProvider`：
 
-![image-20240123154914336](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240123154914336.png)
+![image-20240123154914336](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240123154914336.png)
 
 调用认证管理器进行认证时，进入的是 `ProviderManager` 的 `authenticate` 方法，先找到支持该类型认证的提供者，然后调用其认证方法：
 
-![image-20240123155116956](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240123155116956.png)
+![image-20240123155116956](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240123155116956.png)
 
 ### 4.3 最后进入 DaoAuthenticationProvider
 
@@ -539,11 +539,11 @@ UsernamePasswordAuthenticationFilter`的`attemptAuthentication`方法，该方�
 
 回到第一步 `AbstractAuthenticationProcessingFilter` 中的 `doFilter `方法进行认证成功的后续处理：
 
-![image-20240123180418032](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240123180418032.png)
+![image-20240123180418032](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240123180418032.png)
 
 可以看到`sessionStrategy`使用了两个策略进行会话处理：
 
-![image-20240123181242959](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240123181242959.png)
+![image-20240123181242959](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240123181242959.png)
 
 **CsrfAuthenticationStrategy** ：它负责在执行认证请求之后, 删除旧的令牌, 生成新的，确保每次请求之后,` csrf-token` 都得到更新
 
@@ -588,7 +588,7 @@ UsernamePasswordAuthenticationFilter`的`attemptAuthentication`方法，该方�
 
 如果认证失败，比如密码错误，会进入到`AbstractAuthenticationProcessingFilter`失败处理方法中：
 
-![image-20240123182359205](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240123182359205.png)
+![image-20240123182359205](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240123182359205.png)
 
 失败处理方法逻辑如下：
 
@@ -610,8 +610,8 @@ UsernamePasswordAuthenticationFilter`的`attemptAuthentication`方法，该方�
 
 失败处理器默认使用的是`SimpleUrlAuthenticationFailureHandler`，将页面重定向到`/login?error`：
 
-![image-20240124101656530](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240124101656530.png)
+![image-20240124101656530](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240124101656530.png)
 
 重定向的`/login?error`再次发起请求会被`DefaultLoginPageGeneratingFilter`处理，又重定向到登录页，并显示错误信息：
 
-![image-20240124101737573](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240124101737573.png)
+![image-20240124101737573](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240124101737573.png)

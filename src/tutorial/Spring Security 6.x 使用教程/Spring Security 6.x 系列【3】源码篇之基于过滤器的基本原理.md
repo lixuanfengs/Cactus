@@ -14,7 +14,7 @@ order: 3
 
 类比`JAVA Web`中的**过滤器**，`Spring Security `中的**过滤器**进行了各种代理和增强，可以简单理解`Security `中的**过滤器**结构如下所示：
 
-![image-20231218174633340](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218174633340.png)
+![image-20231218174633340](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218174633340.png)
 
 **简要说明：**
 
@@ -65,7 +65,7 @@ public class CactusFilter implements Filter {
 }
 ```
 
-![image-20231218175833151](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218175833151.png)
+![image-20231218175833151](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218175833151.png)
 
 客户端向应用程序发送请求时，运行容器会创建一个FilterChain（过滤器链），其中包含所有Filter实例和Servlet。这些过滤器根据请求URI路径来处理请求和响应。
 
@@ -112,13 +112,13 @@ public class CactusFilter implements Filter {
 
 ## 4. 委派代理过滤器（DelegatingFilterProxy）
 
-![image-20231218182806637](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218182806637.png)
+![image-20231218182806637](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218182806637.png)
 
 在Spring的spring-web模块中，提供了DelegatingFilterProxy类用于代理过滤器，使得可以方便地利用Spring容器来管理过滤器。在请求响应的流程中，DelegatingFilterProxy会从容器中查找已注册的过滤器Bean对象，然后调用该Bean的过滤方法。
 
 可以看到该类中包含了`Spring`容器对象和被代理的过滤器：
 
-![1702949368735](https://lixuanfengs.github.io/blog-images/Spring Security6.x/1702949368735.jpg)
+![1702949368735](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/1702949368735.jpg)
 
 在 [2. 过滤器]() 步骤中实现的过滤器，是使用`Servlet`容器自己的标准来注册，所以这时并不会被`Spring`容器管理，这时就可以使用`DelegatingFilterProxy`进行代理，实现代码如下：
 
@@ -142,7 +142,7 @@ public class MyConfig {
 
 `Spring Security`提供了`FilterChainProxy`代理类，它是`Spring Security`的核心组件，用于代理`Spring Security`中的所有`SecurityFilterChain`。每个`SecurityFilterChain`中包含多个由`Spring Security`声明的`Filter`。
 
-![image-20231219100525856](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219100525856.png)
+![image-20231219100525856](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219100525856.png)
 
 FilterChainProxy本质上是一个特殊的过滤器，通过DelegatingFilterProxy进行代理，因此它也是一个Bean对象。在Security过滤器链中，过滤器通常都是Bean对象，通过FilterChainProxy进行注册。与直接向Servlet容器或DelegatingFilterProxy注册相比，FilterChainProxy的注册具有许多优势：
 
@@ -152,7 +152,7 @@ FilterChainProxy本质上是一个特殊的过滤器，通过DelegatingFilterPro
 
 `FilterChainProxy ` 在整个流程中的作用如下图：
 
-![image-20231219104612610](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219104612610.png)
+![image-20231219104612610](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219104612610.png)
 
 ## 6. Security 过滤器链（SecurityFilterChain）
 
@@ -162,7 +162,7 @@ FilterChainProxy本质上是一个特殊的过滤器，通过DelegatingFilterPro
 
 如下图中，如果请求的`URL`是` /api/**/`，那么会匹配到左边的`SecurityFilterChain`，如果都不匹配，则会调用支持`/**`的` SecurityFilterChain`。
 
-![image-20231219110053266](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219110053266.png)
+![image-20231219110053266](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219110053266.png)
 
 ## 7. 源码分析
 
@@ -170,7 +170,7 @@ FilterChainProxy本质上是一个特殊的过滤器，通过DelegatingFilterPro
 
 在入门篇中，我们只引入了一个`spring-boot-starter-security`依赖，就可以进行**登录认证**，得益于`Spring Boot`的自动配置。在`spring-boot-autoconfigure`模块中集成了对`Spring Security`的自动配置：
 
-![image-20231219110520871](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219110520871.png)
+![image-20231219110520871](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219110520871.png)
 
 默认的配置是由 `SecurityAutoConfiguration` 和`UserDetailsServiceAutoConfiguration`这两个自动配置类实现的。
 
@@ -285,13 +285,13 @@ public class UserDetailsServiceAutoConfiguration {
 
 在`SecurityFilterAutoConfiguration`自动配置类中，名称为`springSecurityFilterChain`的过滤器将会被代理：
 
-![image-20231219111837486](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219111837486.png)
+![image-20231219111837486](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219111837486.png)
 
 ### 7.2 DefaultSecurityFilterChain
 
 如前所述，`SecurityFilterChain`包含所有过滤器。`Spring Security`提供了默认的实现类`DefaultSecurityFilterChain`，通过`HttpSecurity.build`方法构建。可以注意到，它默认匹配所有请求，并包含了**15**个过滤器。
 
-![image-20231219112457326](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219112457326.png)
+![image-20231219112457326](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219112457326.png)
 
 ### 7.3 springSecurityFilterChain
 
@@ -356,10 +356,10 @@ public Filter springSecurityFilterChain() throws Exception {
 }
 ```
 
-![image-20231219123937347](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219123937347.png)
+![image-20231219123937347](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219123937347.png)
 
 `springSecurityFilterChain` 会被`FilterChainProxy`代理，注册为`Bean`，并存放了所有的`SecurityFilterChain`：
 
-![1702961016571](https://lixuanfengs.github.io/blog-images/Spring Security6.x/1702961016571.jpg)
+![1702961016571](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/1702961016571.jpg)
 
 springSecurityFilterChain 因为之前被声明过被 DelegatingFilterProxy 进行关联代理，最终经过层层代理，会生成完整的 DelegatingFilterProx y类型过滤器，等待请求，并执行相关逻辑。

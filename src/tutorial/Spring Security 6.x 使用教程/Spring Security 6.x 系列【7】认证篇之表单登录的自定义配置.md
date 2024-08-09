@@ -89,7 +89,7 @@ public class CactusSecurityConfig {
 
 访问测试接口，会跳转到自定义登录页：
 
-![image-20240124111318387](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240124111318387.png)
+![image-20240124111318387](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240124111318387.png)
 
 ## 3. 自定义登录请求处理路径
 
@@ -126,7 +126,7 @@ public class CactusSecurityConfig {
 
 重启项目，进行登录，可以发现当前**用户名密码认证过滤器**中处理登录的路径变为了我们的自定义：
 
-![image-20240125172357920](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240125172357920.png)
+![image-20240125172357920](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240125172357920.png)
 
 ## 4. 自定义用户名密码参数名称
 
@@ -153,7 +153,7 @@ public class CactusSecurityConfig {
 
 自定义登录页中也需要修改参数名：
 
-![image-20240125172702273](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240125172702273.png)
+![image-20240125172702273](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240125172702273.png)
 
 ## 5. 自定义登录成功跳转地址
 
@@ -291,13 +291,13 @@ public interface AuthenticationSuccessHandler {
 
 apifox 测试结果如下：
 
-![image-20240126100851292](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240126100851292.png)
+![image-20240126100851292](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240126100851292.png)
 
 ## 8. 自定义认证失败处理器
 
 登录失败时，默认还是会跳转到内部登录页：
 
-![image-20240126101110509](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240126101110509.png)
+![image-20240126101110509](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240126101110509.png)
 
 在前后端分离时，还是需要返回`JSON`，由前端去处理，同理定义一个认证失败处理器即可：
 
@@ -330,4 +330,4 @@ apifox 测试结果如下：
 
 测试结果如下：
 
-![image-20240126101142844](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240126101142844.png)
+![image-20240126101142844](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240126101142844.png)

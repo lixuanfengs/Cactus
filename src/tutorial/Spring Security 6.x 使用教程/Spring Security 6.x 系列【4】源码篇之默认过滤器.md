@@ -20,7 +20,7 @@ order: 4
 
 GenericFilterBean 在 Spring 中提供了一种抽象的方式来实现过滤器，它继承了jakarta.servlet.Filter 接口，并提供了其他一些便于在 Spring 中使用过滤器的功能。例如，GenericFilterBean 可以通过 BeanNameAware 接口获取 bean 的名称，通过 EnvironmentAware 接口获取 Spring 上下文的环境信息，通过 ServletContextAware 接口获取 Web 应用程序的 ServletContext 对象，以及通过 InitializingBean 和 DisposableBean 接口在 bean 初始化和销毁时执行自定义的逻辑。
 
-![image-20231219152357002](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219152357002.png)
+![image-20231219152357002](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219152357002.png)
 
 可以看出 `GenericFilterBean`是对针对`Servlet` 过滤器的一种扩展，让其具备各种`Spring`特性，所实现接口的解释：
 
@@ -38,7 +38,7 @@ OncePerRequestFilter也是 spring-web提供的一个抽象类，继承自Generic
 
 `Spring Security`中的过滤器几乎都继承自该类：
 
-![image-20231219154707275](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231219154707275.png)
+![image-20231219154707275](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231219154707275.png)
 
 `OncePerRequestFilter`中的`doFilter` 实现了限制只执行一次的相关逻辑，最后调用`doFilterInternal`执行子类过滤器的过滤逻辑：
 
@@ -243,13 +243,13 @@ protected void doFilterInternal(HttpServletRequest request, HttpServletResponse 
 
 默认提供了**5**种消息头可写：
 
-![image-20240117171724071](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240117171724071.png)
+![image-20240117171724071](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240117171724071.png)
 
 ### 3.5 CsrfFilter
 
 `CsrfFilter`很好理解，就是防范 `Csrf`攻击，后续单独篇章介绍：
 
-![image-20240117171914171](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240117171914171.png)
+![image-20240117171914171](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240117171914171.png)
 
 ### 3.6 LogoutFilter
 
@@ -353,13 +353,13 @@ private void doFilter(HttpServletRequest request, HttpServletResponse response, 
 
 往下继续会看到 `generateLoginPageHtml`方法中，直接使用字符串拼接了一个`HTML`登录页面😀😀😀：
 
-![image-20240117174319737](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240117174319737.png)
+![image-20240117174319737](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240117174319737.png)
 
 ### 3.9 DefaultLogoutPageGeneratingFilter
 
 `DefaultLogoutPageGeneratingFilter`和上面一样，如果请求`URL`是`/logout`，直接生成一个确认退出页面：
 
-![image-20240117174543892](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240117174543892.png)
+![image-20240117174543892](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240117174543892.png)
 
 ### 3.10 BasicAuthenticationFilter
 
@@ -580,11 +580,11 @@ public FilterChainProxy(List<SecurityFilterChain> filterChains) {
 }
 ```
 
-![image-20240118150537028](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240118150537028.png)
+![image-20240118150537028](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240118150537028.png)
 
 直接将断点打在`OncePerRequestFilter.doFilter()`方法上，浏览器发起一个请求，首先进入的是`Spring Boot`提供了一些请求处理器：
 
-![image-20240118150818127](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20240118150818127.png)
+![image-20240118150818127](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20240118150818127.png)
 
 之后会进入到`FilterChainProxy`（因为它也是一个过滤器）的`doFilter`方法中：
 

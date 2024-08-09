@@ -105,7 +105,7 @@ order: 2
 
 创建数据库并执行源码地址中的`SQL`脚本：
 
-![image-20231218095833880](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218095833880.png)
+![image-20231218095833880](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218095833880.png)
 
 ### **2.2 集成 Mybatis Plus**
 
@@ -245,7 +245,7 @@ public class AutoGeneratorUtils {
 
 把生成的代码复制到项目中：
 
-![image-20231218154630109](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218154630109.png)
+![image-20231218154630109](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218154630109.png)
 
 ### 2.4 测试验证代码
 
@@ -279,7 +279,7 @@ class CactusSpringSecurityDemoTest {
 
 代码成功运行后会输出以下日志：
 
-![image-20231218155848654](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218155848654.png)
+![image-20231218155848654](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218155848654.png)
 
 
 
@@ -310,7 +310,7 @@ public interface UserDetailsService {
 
 `Spring Security`默认提供了几个实现类：
 
-![image-20231218160627289](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218160627289.png)
+![image-20231218160627289](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218160627289.png)
 
 从类名称已经比较好理解，支持**内存、数据库**查询用户。首先我们看下`JdbcDaoImpl`是如何查询用户的，是不是满足我们的业务要求。
 
@@ -396,7 +396,7 @@ public interface UserDetails extends Serializable {
 
 `Spring Security`默认提供了一个实现类`User`源码如下：
 
-![image-20231218162550756](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218162550756.png)
+![image-20231218162550756](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218162550756.png)
 
 目前来说，框架提供的`User`类，已经够用，但是本着可能需要扩展的情况，我们也需要自定义实现`UserDetails `接口。
 
@@ -532,12 +532,12 @@ void insertUserTest() {
 
 查看数据库，显示数据添加成功
 
-![image-20231218165051831](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218165051831.png)
+![image-20231218165051831](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218165051831.png)
 
 ### 3.6 测试登录
 
 启动项目是用新添加的用户进行登录访问测试，在浏览器输入：http://localhost:8888/admin/testString
 
-![image-20231218172334115](https://lixuanfengs.github.io/blog-images/Spring Security6.x/image-20231218172334115.png)
+![image-20231218172334115](https://lixuanfengs.github.io/blog-images/Spring-Security6.x/image-20231218172334115.png)
 
 至此访问首页，使用数据库中的用户、密码登录，集成完毕。
