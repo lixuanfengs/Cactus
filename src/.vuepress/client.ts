@@ -18,7 +18,7 @@ export default defineClientConfig({
   enhance: ({ app }) => {
     app.component("Qweather", Qweather);
     // app.component("Wormhole", Wormhole);
-    // app.component("Travelling", Travelling);
+    app.component("Travelling", Travelling);
   },
   setup: () => {
     onMounted(() => {

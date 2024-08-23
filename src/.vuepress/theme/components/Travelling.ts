@@ -7,7 +7,7 @@ const Travelling: FunctionalComponent = () =>
     { class: "nav-item vp-repo" },
     h("a", {
       class: "vp-repo-link",
-      href: "https://www.travellings.cn/go.html",
+      href: "https://fire.199228.xyz/",
       title:"开往",
       target: "_blank",
       rel: "noopener noreferrer",
