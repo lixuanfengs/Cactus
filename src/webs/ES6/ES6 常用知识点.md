@@ -415,3 +415,52 @@ alert("当前用户："+user.username)
 isAdult(user.age);
 ```
 
+## 递归通用级联数据
+
+```javascript
+  // 调用函数，查找目标节点及其父节点路径
+  const targetValue = '声纳仪'
+  const path = findNodePath(categoryTree.value, targetValue)
+
+  if (path) {
+    console.log('Path to node:', path.map((node) => node.label).join(' > '))
+  } else {
+    console.log('Node not found')
+  }
+
+const findNodePath = (options, targetValue) => {
+    
+  // 用于存储当前路径中的节点
+  const path = []
+
+  // 内部递归函数
+  function traverse(nodes) {
+    for (let node of nodes) {
+      // 将当前节点推入路径
+      path.push(node)
+
+      // 检查当前节点是否是目标节点
+      if (node.label === targetValue) {
+        // 找到目标节点，返回当前路径的复制
+        return [...path]
+      }
+
+      // 如果有子节点，继续递归遍历
+      if (node.children) {
+        const result = traverse(node.children)
+        if (result) {
+          return result
+        }
+      }
+
+      // 当前节点不是目标节点，从路径中移除
+      path.pop()
+    }
+    return null
+  }
+
+  // 开始遍历
+  return traverse(options)
+}
+```
+
