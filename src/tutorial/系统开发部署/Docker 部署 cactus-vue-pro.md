@@ -72,6 +72,25 @@ systemctl start docker
 >    The Docker daemon starts automatically.
 >    Docker 守护程序会自动启动。
 
+启动 Docker 服务：
+
+```shell
+sudo systemctl start docker
+```
+
+设置 Docker 服务开机自启：
+
+```shell
+sudo systemctl enable docker
+```
+
+验证 Docker 是否安装成功：
+
+```shell
+sudo docker --version
+sudo docker run hello-world
+```
+
 ### 1.1 Idea 远程连接 Docker
 
 编辑 docker.service 文件
@@ -144,6 +163,42 @@ systemctl restart docker
 # 测试
 curl http://127.0.0.1:2375/info
 ```
+
+### 1.2 Docker 镜像导入另一台机器上
+
+#### 1.2.1 使用以下命令查看本地机器上的 Docker 镜像列表
+
+```shell
+docker images
+```
+
+使用 `docker save` 命令将 Docker 镜像保存为 tar 文件：
+
+```shell
+docker save -o <path/to/save/file.tar> <image-name>:<tag>
+```
+
+> 例如，如果您想导出名为 `myapp`，标签为 `latest` 的镜像，这将会在当前目录下生成一个名为 `myapp_latest.tar` 的文件。
+>
+> ```shell
+> docker save -o myapp_latest.tar myapp:latest
+> ```
+
+将导出的 tar 文件（例如 `myapp_latest.tar`）使用 USB 闪存驱动器、外部硬盘或其他可用的物理介质复制到目标机器上。
+
+#### 1.2.2 将 tar 文件复制到目标机器的任意目录中。
+
+使用 `docker load` 命令从 tar 文件加载 Docker 镜像：
+
+```shell
+docker load -i <path/to/file.tar>
+```
+
+> 例如，如果文件名是 `myapp_latest.tar`，以下命令将解压并将 Docker 镜像导入到目标机器的 Docker 环境中。
+>
+> ```shell
+> docker load -i myapp_latest.tar
+> ```
 
 ## 2. 配置 MySQL
 
