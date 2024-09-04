@@ -1,1 +1,0 @@
-import{i as r}from"./app-BRzcTC-7.js";const a=async()=>{try{const{pageviewCount:e}=await r(()=>import("./app-BRzcTC-7.js").then(t=>t.Y),[]);return e({serverURL:COMMENT_OPTIONS.serverURL})}catch{console.error("@waline/client is not installed!")}};export{a as updatePageview};
