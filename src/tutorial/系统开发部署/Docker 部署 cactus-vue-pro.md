@@ -286,7 +286,7 @@ docker run -d --name redis --restart=always -p 6379:6379 redis:5.0.14-alpine
 
 ### 4.4 构建镜像
 
-① 在 `/work/projects/yudao-server` 目录下，新建 Dockerfile文件，用于制作后端项目的 Docker 镜像。编写内容如下：
+① 在 `/work/projects/cactus-server` 目录下，新建 Dockerfile文件，用于制作后端项目的 Docker 镜像。编写内容如下：
 
 ```bash
 ## AdoptOpenJDK 停止发布 OpenJDK 二进制，而 Eclipse Temurin 是它的延伸，提供更好的稳定性
