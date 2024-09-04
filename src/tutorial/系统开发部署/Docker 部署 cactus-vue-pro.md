@@ -227,6 +227,27 @@ docker run -v /work/mysql/:/var/lib/mysql \
 
 ![image-20240403161116734](https://lixuanfengs.github.io/blog-images/vp/web/image-20240403161116734.png)
 
+### 2.2.3 控制台命令方式创建数据库
+
+创建一个名字为 `cactus-vue-pro` 数据库，并指定了字符集和排序规则。
+
+```shell
+mysql -u root -p
+
+CREATE DATABASE `cactus-vue-pro-20` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+exit;
+```
+
+把需要导入的文件上传到服务器指定位置后，进行导入操作。
+
+```shell
+# 从命令行导入 SQL 文件到数据库
+mysql -u root -p mydatabase < /path/to/mydatabase.sql
+```
+
+
+
 ## 3. 配置 Redis
 
 友情提示：使用 Docker 安装 Redis 是可选步骤，也可以直接安装 Redis，或者购买 Redis 云服务。
