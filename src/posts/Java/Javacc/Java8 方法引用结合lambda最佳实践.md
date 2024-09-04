@@ -6,7 +6,6 @@ category:
    - lambda
 tag:
    - lambda
-order: 7
 ---
 
 ## 详解lambda中的方法引用
