@@ -101,7 +101,7 @@ systemctl restart redis
 
 在 Linux 服务器上创建 `/work/projects/cactus-server` 目录，使用 `scp` 命令或者 FTP 工具，将 `cactus-server.jar` 上传到该目录下。如下图所示：
 
-![上传 Jar 包](https://doc.iocoder.cn/img/Linux%E9%83%A8%E7%BD%B2/04.png)
+![image-20240904112632160](C:\Users\Dell\AppData\Roaming\Typora\typora-user-images\image-20240904112632160.png)
 
 疑问：如果构建 War 包，部署到 Tomcat 下？
 
@@ -109,10 +109,11 @@ systemctl restart redis
 
 ### 3.4 编写脚本
 
-在 `/work/projects/yudao-server` 目录下，新建 Shell 脚本 `deploy.sh`，用于启动后端项目。编写内容如下：
+在 `/work/projects/cactus-server` 目录下，新建 Shell 脚本 `deploy.sh`，用于启动后端项目。编写内容如下：
 
 ```bash
 #!/bin/bash
+# 当脚本中的任何命令以非零状态（即错误状态）退出时，脚本会立即终止
 set -e
 
 DATE=$(date +%Y%m%d%H%M)
