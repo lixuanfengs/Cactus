@@ -568,3 +568,57 @@ server {
 
 }
 ```
+
+> 如何 html 目录下需要配置多级网站，按照以下内容进行调整：
+>
+> ```nginx
+> server {
+>     listen       80;
+>     server_name  218.249.73.24;
+> 
+>     location /cactus-web {
+>         alias   /usr/share/nginx/html/cactus-web;
+>         index  index.html index.htm;
+>         try_files $uri $uri/ /cactus-web/index.html;
+>     }
+> 
+>     location /cactus-admin {
+>         alias   /usr/share/nginx/html/cactus-admin;
+>         index  index.html index.htm;
+>         try_files $uri $uri/ /cactus-admin/index.html;
+>     }
+> 
+>     location /web-api/ {
+>         proxy_pass http://192.168.1.20:48080/web-api/;
+>         proxy_set_header Host $http_host;
+>         proxy_set_header X-Real-IP $remote_addr;
+>         proxy_set_header REMOTE-HOST $remote_addr;
+>         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+>     }
+> 
+> 
+>     location /admin-api/ {
+>         proxy_pass http://192.168.1.20:48080/admin-api/;
+>         proxy_set_header Host $http_host;
+>         proxy_set_header X-Real-IP $remote_addr;
+>         proxy_set_header REMOTE-HOST $remote_addr;
+>         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+>     }
+> 
+>     location /app-api/ {
+>         proxy_pass http://192.168.1.20:48080/app-api/;
+>         proxy_set_header Host $http_host;
+>         proxy_set_header X-Real-IP $remote_addr;
+>         proxy_set_header REMOTE-HOST $remote_addr;
+>         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+>     }
+> 
+> }
+> ```
+>
+> 
+
+
+
+
+
