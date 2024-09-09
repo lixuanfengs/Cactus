@@ -101,7 +101,7 @@ systemctl restart redis
 
 在 Linux 服务器上创建 `/work/projects/cactus-server` 目录，使用 `scp` 命令或者 FTP 工具，将 `cactus-server.jar` 上传到该目录下。如下图所示：
 
-![image-20240904112632160](C:\Users\Dell\AppData\Roaming\Typora\typora-user-images\image-20240904112632160.png)
+![image-20240904112632160](https://lixuanfengs.github.io/blog-images/vp/web/image-20240904112632160.png)
 
 疑问：如果构建 War 包，部署到 Tomcat 下？
 
@@ -198,7 +198,7 @@ deploy
 
 如果你想要修改脚本，主要关注 `BASE_PATH`、`PROFILES_ACTIVE`、`JAVA_OPS` 三个参数。如下图所示：
 
-![可修改参数](https://doc.iocoder.cn/img/Linux%E9%83%A8%E7%BD%B2/05.png)
+![image-20240909095336846](https://lixuanfengs.github.io/blog-images/vp/web/image-20240909095336846.png)
 
 ### 3.5 启动后端
 
@@ -349,7 +349,7 @@ http {
 
 ④ 请求 [http://192.168.225.2 (opens new window)](http://192.168.225.2/)地址，成功访问前端项目，返回前端界面如下：
 
-![前端界面](https://doc.iocoder.cn/img/Linux%E9%83%A8%E7%BD%B2/14.png)
+
 
 ⑤ 如果你使用到 WebSocket 的话，需要额外对 `/infra/ws` 路径进行配置，具体可见 [https://t.zsxq.com/LQEfC (opens new window)](https://t.zsxq.com/LQEfC)链接。
 
@@ -430,4 +430,4 @@ http {
 
 ④ 请求 [http://admin.iocoder.cn (opens new window)](http://admin.iocoder.cn/)地址，成功访问前端项目，返回前端界面如下：
 
-![前端界面](https://doc.iocoder.cn/img/Linux%E9%83%A8%E7%BD%B2/15.png)
+![image-20240909095227607](https://lixuanfengs.github.io/blog-images/vp/web/image-20240909095227607.png)
