@@ -29,6 +29,12 @@ export const zhSidebar = sidebar({
           prefix: "Python/",
           link: "Python/",
         },
+        {
+          text: "Spring",
+          icon: "spring",
+          prefix: "Spring/",
+          link: "Spring/",
+        },
       ],
     },
     {
@@ -115,6 +121,7 @@ export const zhSidebar = sidebar({
     },
   ],
   "/posts/Java/": "structure",
+  "/posts/Spring/": "structure",
   "/posts/Python/": "structure",
   "/linuxs": "structure",
   "/tutorial": "structure",

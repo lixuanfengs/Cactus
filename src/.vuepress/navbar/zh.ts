@@ -12,6 +12,7 @@ export const zhNavbar = navbar([
         prefix:"/posts/",
         children: [
           { text: "Java", icon: "java", link: "Java/" },
+          { text: "Spring", icon: "spring", link: "Spring/" },
           { text: "Python", icon: "python", link: "Python/" },
         ],
       },
