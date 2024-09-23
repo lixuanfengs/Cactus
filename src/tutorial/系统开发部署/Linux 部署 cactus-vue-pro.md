@@ -210,12 +210,12 @@ deploy
 
 ```bash
 [stop] 开始停止 /work/projects/cactus-server/cactus-server
-[stop] /work/projects/cactus-server/yudao-server 未启动，无需停止
+[stop] /work/projects/cactus-server/cactus-server 未启动，无需停止
 [start] 开始启动 /work/projects/cactus-server/cactus-server
 [start] JAVA_OPS: -Xms512m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/work/projects/cactus-server/heapError
 [start] JAVA_AGENT:
 [start] PROFILES: dev
-[start] 启动 /work/projects/cactus-server/yudao-server 完成
+[start] 启动 /work/projects/cactus-server/cactus-server 完成
 ```
 
 ③ 执行 `tail -f nohup.out` 命令，查看启动日志。看到如下内容，说明启动完成：

@@ -360,7 +360,7 @@ docker run -d --name redis --restart=always -p 6379:6379 redis:5.0.14-alpine
 
 ### 4.3 上传 Jar 包
 
-在 Linux 服务器上创建 `/sg-work/cactus-server` 目录，使用 `scp` 命令或者 FTP 工具，将 `yudao-server.jar` 上传到该目录下。如下图所示：
+在 Linux 服务器上创建 `/sg-work/cactus-server` 目录，使用 `scp` 命令或者 FTP 工具，将 `cactus-server.jar` 上传到该目录下。如下图所示：
 
 ![image-20240403161407944](https://lixuanfengs.github.io/blog-images/vp/web/image-20240403161407944.png)
 
@@ -389,7 +389,7 @@ EXPOSE 48080
 ENTRYPOINT java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar app.jar
 ```
 
-② 执行如下命令，构建名字为 `yudao-server` 的 Docker 镜像。
+② 执行如下命令，构建名字为 `cactus-server` 的 Docker 镜像。
 
 ```bash
 cd /sg-work/cactus-server
