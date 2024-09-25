@@ -82,7 +82,7 @@ docker images | grep offline
 docker-slim build -http-probe=false --target cactus-server-offline:latest --tag cactus-server-offline:slim
 ```
 
-![image-20240925111948723](C:\Users\Dell\AppData\Roaming\Typora\typora-user-images\image-20240925111948723.png)
+![image-20240925111948723](https://lixuanfengs.github.io/blog-images/vp/web/image-20240925111948723.png)
 
 > *默认会开启http的探测(--http-probe)。我们build的时候给他关上*
 
