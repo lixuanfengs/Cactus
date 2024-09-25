@@ -72,6 +72,13 @@ export const zhSidebar = sidebar({
           link: "Linux/",
           // children: ["Browser/", "JavaScript/", "CSS/", "node/", "Vue/"],
         },
+        {
+          text: "Docker",
+          icon: "docker",
+          prefix: "docker/",
+          link: "docker/",
+          // children: ["Browser/", "JavaScript/", "CSS/", "node/", "Vue/"],
+        },
       ],
     },
     {

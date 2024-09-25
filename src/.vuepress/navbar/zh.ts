@@ -29,7 +29,9 @@ export const zhNavbar = navbar([
         prefix:"/linuxs/",
         children: [
           { text: "Linux", icon: "linux", link: "Linux/" },
+          { text: "Docker", icon: "docker", link: "Docker/" },
         ],
+
       },
       {
         text: "博客相关",
