@@ -203,76 +203,87 @@ docker load -i <path/to/file.tar>
 #### 1.2.3 监听文件并作处理脚本
 
 ```shell
-#!/bin/bash  # 指定使用 bash 作为脚本解释器
+#!/bin/bash
 
-# 定义源文件路径，指向 cactus-server1.jar 文件
+# 定义路径和命令变量
+# 源文件路径：要监控的JAR文件位置
 SOURCE_PATH="/home/cactus/cactus-server1.jar"
-
-# 定义目标路径，用于同步文件
+# 目标路径：JAR文件要复制到的位置
 TARGET_PATH="/sg-work/offline-packages/"
-
-# Docker 构建命令，标记生成的 Docker 镜像为 cactus-server-offline:latest
+# Docker构建命令：创建一个名为cactus-server-offline:latest的Docker镜像
 DOCKER_BUILD_CMD="docker build -t cactus-server-offline:latest ."
-
-# Docker 保存命令，将生成的 Docker 镜像保存为 tar 文件
-DOCKER_SAVE_CMD="docker save -o cactus-server-offline.tar cactus-server-offline:latest"
-
-# 修改 tar 文件的权限为 644（所有者读写，其他人只读）
+# Docker-slim命令：使用docker-slim优化Docker镜像，创建一个更小的版本
+DOCKER_SLIM_CMD="echo | docker-slim build --http-probe=false --target cactus-server-offline:latest --tag cactus-server-offline:slim"
+# Docker保存命令：将优化后的Docker镜像保存为tar文件
+DOCKER_SAVE_CMD="docker save -o cactus-server-offline.tar cactus-server-offline:slim"
+# 修改权限命令：确保生成的tar文件有正确的权限
 CHMOD_CMD="chmod 644 cactus-server-offline.tar"
-
-# 删除本地的 cactus-server-offline:latest Docker 镜像
+# Docker删除镜像命令：删除旧的Docker镜像
 DOCKER_RMI_IMAGE_CMD="docker rmi cactus-server-offline:latest"
-
-# 定义 SCP 命令的目标路径，用于远程传输
+# SCP路径命令：定义远程服务器路径（似乎未在脚本中使用）
 SCP_PATH_CMD="root@218.17.30.27:/work/projects/work/projects/cactus-server"
-
-# 定义传输到的本地文件路径
+# SCP目标路径命令：定义本地tar文件路径（似乎未在脚本中使用）
 SCP_TO_PATH_CMD="/sg-work/offline-packages/cactus-server-offline.tar"
 
-# 开始无限循环，持续检测文件状态
+# 主循环：持续监控源文件的变化
 while true; do
-
     # 检查源文件是否存在
     if [ -f "$SOURCE_PATH" ]; then
-        # 如果文件存在，打印发现文件并开始处理
         echo "$(date) - 文件 $SOURCE_PATH 发现，开始处理..."
 
-        # 使用 rsync 命令同步源文件到目标路径
-        echo "$(date) - 同步 $SOURCE_PATH 到 $TARGET_PATH/cactus-server.jar"
+        # 使用rsync同步文件到目标路径
+        echo "$(date) - 开始同步 $SOURCE_PATH 到 $TARGET_PATH/cactus-server.jar"
         rsync -av "$SOURCE_PATH" "$TARGET_PATH/cactus-server.jar"
 
-        # 检查 rsync 是否执行成功
+        # 检查rsync命令的执行结果
         if [ $? -eq 0 ]; then
-            # 如果成功，打印成功信息
             echo "$(date) - 文件同步成功"
         else
-            # 如果失败，打印失败信息并退出脚本
             echo "$(date) - 文件同步失败，退出..."
             exit 1
         fi
 
-        # 运行 Docker 相关的构建、保存和镜像删除命令
-        echo "$(date) - 运行 Docker 命令..."
-        $DOCKER_RMI_IMAGE_CMD  # 删除本地旧的 Docker 镜像
-        $DOCKER_BUILD_CMD      # 构建新的 Docker 镜像
-        $DOCKER_SAVE_CMD       # 保存镜像为 tar 文件
-        $CHMOD_CMD             # 修改 tar 文件的权限
+        # 执行一系列Docker相关命令
+        echo "$(date) - 开始执行Docker命令..."
 
-        echo "$(date) - 处理完成"
+        # 删除旧的Docker镜像
+        echo "$(date) - 执行删除旧镜像命令: $DOCKER_RMI_IMAGE_CMD"
+        $DOCKER_RMI_IMAGE_CMD
+        echo "$(date) - 删除旧镜像完成"
+        
+        # 构建新的Docker镜像
+        echo "$(date) - 执行Docker构建命令: $DOCKER_BUILD_CMD"
+        $DOCKER_BUILD_CMD
+        echo "$(date) - Docker构建完成"
+        
+        # 使用docker-slim优化Docker镜像
+        echo "$(date) - 执行Docker-slim命令: $DOCKER_SLIM_CMD"
+        $DOCKER_SLIM_CMD
+        echo "$(date) - Docker-slim命令执行完成"
+        
+        # 将优化后的Docker镜像保存为tar文件
+        echo "$(date) - 执行Docker保存命令: $DOCKER_SAVE_CMD"
+        $DOCKER_SAVE_CMD
+        echo "$(date) - Docker保存完成"
+        
+        # 修改生成的tar文件的权限
+        echo "$(date) - 执行修改权限命令: $CHMOD_CMD"
+        $CHMOD_CMD
+        echo "$(date) - 权限修改完成"
 
-        # 删除已处理的源文件
-        echo "$(date) - 运行删除 $SOURCE_PATH 文件命令..."
+        echo "$(date) - 所有Docker命令执行完毕"
+
+        # 删除原始源文件
+        echo "$(date) - 开始删除源文件 $SOURCE_PATH"
         rm -rf "$SOURCE_PATH"
+        echo "$(date) - 删除源文件 $SOURCE_PATH 成功"
 
-        # 以下部分被注释掉了，可能是为了在未来添加远程传输功能
-        #echo "$(date) - 运行复制 $SCP_PATH_CMD 文件命令..."
-        #scp  "$SCP_TO_PATH_CMD" "$SCP_PATH_CMD"
-        #echo "$(date) - 复制文件处理完成。"
-
-        # 暂停 10 秒以避免频繁执行
+        # 等待10秒，可能是为了让系统有时间处理上述更改
+        echo "$(date) - 等待10秒..."
         sleep 10
     else
-        # 如果文件不存在，等待 5 秒再重新检查
+        # 如果源文件不存在，等待5秒后重新检查
+        # 这个较短的等待时间允许脚本快速响应新文件的出现
         sleep 5
     fi
 done
