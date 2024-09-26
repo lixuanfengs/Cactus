@@ -1,0 +1,1 @@
+import{i as r}from"./app-kG2i92ec.js";const a=async()=>{try{const{pageviewCount:e}=await r(()=>import("./app-kG2i92ec.js").then(t=>t.$),[]);return e({serverURL:COMMENT_OPTIONS.serverURL})}catch{console.error("@waline/client is not installed!")}};export{a as updatePageview};
