@@ -5,6 +5,7 @@ date: 2024-03-11
 index: false
 timeline: false
 article: false
+order: 1
 ---
 :::info
 这里放置 Linux 相关内容
