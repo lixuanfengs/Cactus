@@ -22,7 +22,7 @@ export default MyTheme({
     // 默认：
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
     // 自己的
-    "//at.alicdn.com/t/c/font_4094073_h9xgj93yb1o.css",
+    "//at.alicdn.com/t/c/font_4094073_l5avjhmvwr.css",
   ],
   // 网站 logo 配置
   logo: "/logo.svg",

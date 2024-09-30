@@ -1,12 +1,12 @@
 ---
-title: "使用 Docker-Slim 压缩 Docker 镜像"
+title: "Docker-Slim 压缩 Docker 镜像"
 subtitle: "使用 Docker-Slim 压缩 Docker 镜像"
 date: 2024-9-25 11:15:26
 category:
 - Docker
 tag:
 - Docker
-order: 1
+order: 2
 ---
 
 ## Docker-Slim
