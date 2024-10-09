@@ -98,10 +98,11 @@ order: 1
 
 ### 文件传输
 
-| 命令                               | 解释                                          |
-| ---------------------------------- | --------------------------------------------- |
-| **`scp file1.txt server2/tmp`**    | 安全地将file1.txt复制到/tmp目录中的server2    |
-| **`rsync -a /home/apps /backup/`** | 将/home/apps目录中的内容与/backup目录进行同步 |
+| 命令                                              | 解释                                           |
+| ------------------------------------------------- | ---------------------------------------------- |
+| **`scp file1.txt server2/tmp`**                   | 安全地将file1.txt复制到/tmp目录中的server2     |
+| **`rsync -a /home/apps /backup/`**                | 将/home/apps目录中的内容与/backup目录进行同步  |
+| **`scp check_linux.sh root@192.168.11.12:/work`** | 将check_linux.sh文件复制到远程机器/work 目录下 |
 
 ### 目录遍历
 
