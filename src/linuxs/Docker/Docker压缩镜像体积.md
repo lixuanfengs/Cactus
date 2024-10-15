@@ -38,7 +38,7 @@ ENTRYPOINT java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar app.ja
 
 文件中 cactus-server.jar 的大小如图：
 
-![image-20241015105045146](C:\Users\Dell\AppData\Roaming\Typora\typora-user-images\image-20241015105045146.png)
+![image-20241015105045146](https://lixuanfengs.github.io/blog-images/vp/web/image-20241015105045146.png)
 
 执行如下命令，构建名字为 `cactus-server-offline-a` 的 Docker 镜像。
 
@@ -48,7 +48,7 @@ docker build --no-cache -t cactus-server-offline-a:latest .
 
 打包镜像完成后使用命令 `docker images` 来查看镜像的体积：
 
-![image-20241015105446540](C:\Users\Dell\AppData\Roaming\Typora\typora-user-images\image-20241015105446540.png)
+![image-20241015105446540](https://lixuanfengs.github.io/blog-images/vp/web/image-20241015105446540.png)
 
 > 可以看到此时的镜像体积是593MB。
 
@@ -99,7 +99,7 @@ docker build --no-cache -t cactus-server-offline-a:latest .
 
 此时通过使用命令 `docker images` 再来查看镜像的体积：
 
-![image-20241015110302796](C:\Users\Dell\AppData\Roaming\Typora\typora-user-images\image-20241015110302796.png)
+![image-20241015110302796](https://lixuanfengs.github.io/blog-images/vp/web/image-20241015110302796.png)
 
 如图所示，镜像体积从一开始的593MB成功减少到了346MB。
 
