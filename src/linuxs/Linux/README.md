@@ -2,13 +2,13 @@
 title: "Linux 服务器知识体系"
 icon: linux
 date: 2024-03-11
-index: false
+index: true
 timeline: false
 article: false
-order: 1
 ---
 :::info
 这里放置 Linux 相关内容
 :::
+---
 
 <AutoCatalog />
