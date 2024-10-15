@@ -1,1 +1,0 @@
-import{i as r}from"./app-BF9FcIOQ.js";const a=async()=>{try{const{pageviewCount:e}=await r(()=>import("./app-BF9FcIOQ.js").then(t=>t.$),[]);return e({serverURL:COMMENT_OPTIONS.serverURL})}catch{console.error("@waline/client is not installed!")}};export{a as updatePageview};
