@@ -91,3 +91,13 @@ $ docker run -it --rm -p  8001:8080 --name my-nginx nginx
 | `docker top nginx-server`     | 运行进程             |
 | `docker stats nginx-server`   | 容器资源使用         |
 | `docker diff nginx-server`    | 列出对容器所做的更改 |
+
+
+
+| session-01                                              | session-02---新启动一个客户端连接                            |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| BEGIN;<br/>UPDATE t_customer SET age=1 WHERE cname='z3' |                                                              |
+|                                                         | UPDATE t_customer SET age=44 WHERE CNAME='z4'; #ok。<br />或者<br />UPDATE t_customer SET age=44 WHERE CNAME='z4'; #ok。<br />或者<br />UPDATE t_customer SET age=11 WHERE id=4; # 转圈圈<br />UPDATE t_customer SET age=11 WHERE CNAME='z3' # 转圈圈 |
+| commit/rollback;                                        |                                                              |
+|                                                         | ok                                                           |
+| 按照主键索引id                                          |                                                              |

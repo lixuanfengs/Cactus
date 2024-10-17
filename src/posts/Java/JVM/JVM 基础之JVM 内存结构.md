@@ -13,9 +13,6 @@ sticky: true
 # 此页面会出现在星标文章中
 star: true
 ---
-
-> 本文主要对JVM 内存结构进行讲解，注意不要和Java内存模型混淆了。原先这里放了一篇我自己整理的文章，最近看到**海星的javakeeper公众号**整理的文章，整理的很好。所以替换为他的文章，以方便你构筑JVM内存结构的知识体系。
-
 ![img](https://lixuanfengs.github.io/blog-images/vp/Java/007S8ZIlly1gg9kuge8ovj32150tt7cd.jpg)
 
 [运行时数据区](#运行时数据区)

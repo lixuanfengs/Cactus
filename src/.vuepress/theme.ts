@@ -281,5 +281,8 @@ export default MyTheme({
         },
       },
     },
+    markdownMath: {
+      type: "katex", // 或 'mathjax'
+    },
   },
 });
