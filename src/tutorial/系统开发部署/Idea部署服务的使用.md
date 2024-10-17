@@ -1,5 +1,5 @@
 ---
-title: "Idea 部署服务的使用"
+title: "Idea部署服务的使用"
 subtitle: "devops"
 date: 2024-4-03 14:06:01
 category:

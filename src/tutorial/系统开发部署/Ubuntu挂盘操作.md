@@ -1,12 +1,12 @@
 ---
-title: "Ubuntu 挂盘操作"
-subtitle: "Ubuntu 挂盘操作"
+title: "Ubuntu挂盘操作"
+subtitle: "Ubuntu挂盘操作"
 date: 2024-4-03 15:36:20
 category:
   - Ubuntu 挂盘操作
 tag:
   - Ubuntu 挂盘操作
-order: 4
+order: 6
 ---
 
 ## 检查硬盘，首先需要查看新硬盘能否被机器识别

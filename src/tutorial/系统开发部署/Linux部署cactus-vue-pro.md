@@ -1,12 +1,12 @@
 ---
-title: "Linux 部署 cactus-vue-pro"
-subtitle: "Linux 部署 cactus-vue-pro"
+title: "Linux部署cactus-vue-pro"
+subtitle: "Linux部署cactus-vue-pro"
 date: 2024-4-03 15:36:20
 category:
   - cactus-vue-pro
 tag:
   - cactus-vue-pro
-order: 4
+order: 3
 ---
 
 ## 1. 配置 MySQL

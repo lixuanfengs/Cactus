@@ -123,8 +123,10 @@ export default MyTheme({
   // 页面加密配置
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["1234"],
-      "/zh/demo/encrypt.html": ["1234"],
+      "/demo/encrypt.html": ["cactusli"],
+      "/zh/demo/encrypt.html": ["cactusli"],
+      "/tutorial/系统开发部署/Linux部署cactus-vue-pro.html": "cactusli",
+      "/tutorial/系统开发部署/Docker部署cactus-vue-pro.html": "cactusli",
     },
   },
 
