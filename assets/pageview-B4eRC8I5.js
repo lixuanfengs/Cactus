@@ -1,1 +1,0 @@
-import{O as r}from"./app-CIOQhzI3.js";const o=async()=>{try{const{pageviewCount:e}=await r(()=>import("./app-CIOQhzI3.js").then(t=>t.a0),[]);return e({serverURL:COMMENT_OPTIONS.serverURL})}catch{console.error("@waline/client is not installed!")}};export{o as updatePageview};
