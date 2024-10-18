@@ -43,7 +43,7 @@ export const zhNavbar = navbar([
     ],
   },
   {
-    text: "工具|软件",
+    text: "工具|教程",
     icon: "ruanjian",
     link: "/tutorial/",
   },

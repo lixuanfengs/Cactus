@@ -82,7 +82,7 @@ export const zhSidebar = sidebar({
       ],
     },
     {
-      text: "工具|软件",
+      text: "工具|教程",
       icon: "software",
       prefix: "tutorial/",
       link: "tutorial",

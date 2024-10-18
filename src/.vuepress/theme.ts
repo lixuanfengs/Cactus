@@ -23,6 +23,8 @@ export default MyTheme({
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
     // 自己的
     "//at.alicdn.com/t/c/font_4094073_l5avjhmvwr.css",
+    "fontawesome",
+    "iconify",
   ],
   // 网站 logo 配置
   logo: "/logo.svg",
@@ -261,7 +263,7 @@ export default MyTheme({
     },
     comment: {
       provider: "Waline",
-      serverURL: "https://vp.nices.eu.org/", // your server url
+      serverURL: "https://content.cactusli.net/", // your server url
       reaction: true,
       requiredMeta: ["nick"],
       wordLimit: 300,
