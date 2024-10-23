@@ -23,8 +23,6 @@ export default MyTheme({
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
     // 自己的
     "//at.alicdn.com/t/c/font_4094073_l5avjhmvwr.css",
-    "fontawesome",
-    "iconify",
   ],
   // 网站 logo 配置
   logo: "/logo.svg",
