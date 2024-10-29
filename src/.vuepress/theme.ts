@@ -22,8 +22,10 @@ export default MyTheme({
     // 默认：
     "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
     // 自己的
-    "//at.alicdn.com/t/c/font_4094073_l5avjhmvwr.css",
+    "//at.alicdn.com/t/c/font_4094073_jquxe6b57p.css",
+
   ],
+
   // 网站 logo 配置
   logo: "/logo.svg",
    // 项目仓库地址，用于在页面上显示“在 GitHub 上编辑此页”链接
