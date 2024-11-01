@@ -2,7 +2,6 @@ import { MyTheme } from "./theme/index";
 import {  zhNavbar } from "./navbar/index.js";
 import {  zhSidebar } from "./sidebar/index.js";
 
-
 export default MyTheme({
   // 开启热重载
   hotReload: true,
