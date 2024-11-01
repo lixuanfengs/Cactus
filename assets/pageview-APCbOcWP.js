@@ -1,0 +1,1 @@
+import{O as r}from"./app-Bi4lPY3K.js";const o=async()=>{try{const{pageviewCount:e}=await r(()=>import("./app-Bi4lPY3K.js").then(t=>t.a0),[]);return e({serverURL:COMMENT_OPTIONS.serverURL})}catch{console.error("@waline/client is not installed!")}};export{o as updatePageview};
