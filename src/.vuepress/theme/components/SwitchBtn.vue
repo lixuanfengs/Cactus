@@ -103,7 +103,6 @@ const rightClick = () => {
     text-align: left;
     box-sizing: border-box;
     min-height: 2.5rem;
-    max-width: 14rem;
     color: #fff;
     padding: 0.625rem 0.625rem 0.625rem 0rem;
     font-size: 0.9rem;
