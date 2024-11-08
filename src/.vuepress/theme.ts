@@ -281,7 +281,7 @@ export default MyTheme({
     },
     comment: {
       provider: "Waline",
-      serverURL: "https://content.cactusli.net/", // your server url
+      serverURL: "https://content.199228.xyz/", // your server url
       reaction: true,
       requiredMeta: ["nick"],
       wordLimit: 300,
