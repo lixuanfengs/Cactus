@@ -7,10 +7,6 @@ category:
 tag:
   - Java
   - Collection   
-# 此页面会在文章列表置顶
-sticky: true
-# 此页面会出现在星标文章中
-star: true
 order: 1
 ---
 

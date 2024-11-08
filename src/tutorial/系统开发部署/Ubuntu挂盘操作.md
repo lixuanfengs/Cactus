@@ -102,7 +102,7 @@ root@kejipingshen-zygx-8new:/work#
 UUID="8c420242-b791-49fe-bbe3-614ee08be462" /work xfs defaults 0 0
 ```
 
-#### 1.确保 `/etc/fstab` 中的配置正确：
+#### 1. 确保 `/etc/fstab` 中的配置正确：
 
 假设您已经在 `/etc/fstab` 中配置了如下条目：
 
@@ -279,6 +279,67 @@ mkfs.xfs /dev/vdb1
 **挂载分区（可选）：** 创建挂载点并将分区挂载：
 
 ```
-bash复制代码mkdir /mnt/vdb1
+mkdir /mnt/vdb1
 mount /dev/vdb1 /mnt/vdb1
 ```
+
+
+
+## Ubuntu 20.04 在原盘上扩充存储
+
+在保证原盘数据安全的情况下将 XFS 文件系统扩展到更大的空间。
+
+**需要注意的事项：**
+
+- **XFS 文件系统支持在线扩容，不需要卸载**
+- **建议在操作前做好数据备份**
+- **确保扩容过程中系统不会断电或重启**
+
+### 1. 首先使用 fdisk 重新调整分区大小
+
+```shell
+fdisk /dev/vdb
+```
+
+在 fdisk 中依次执行：
+
+- 输入 'd' 删除现有分区 (vdb1)
+- 输入 'n' 创建新分区
+- 选择 'p' 创建主分区
+- 分区号选择 '1'
+- 起始扇区按默认值（直接回车）
+- 结束扇区使用全部空间（直接回车）
+- 输入 "N" (保证原来的数据不丢失，不受影响)
+- 输入 'w' 保存并退出
+
+![image-20241107134455037](https://beauties.eu.org/blogimg/main/img1/image-20241107134455037.png)
+
+> 看到提示 "Partition #1 contains a xfs signature. Do you want to remove the signature? [Y/es/N]o:"
+>
+> 在这里应该输入 "N" (No)。原因是：
+>
+> 1. 我们希望保留原有的 XFS 文件系统签名，因为 /work 目录下的数据都保存在这个文件系统中
+> 2. 选择 "N" 可以保留原有的文件系统信息，确保数据不会受损
+> 3. 如果选择 "Y"，会删除 XFS 签名，可能导致数据无法访问
+>
+> 这种情况下：
+>
+> 1. 输入 "N" 保留 XFS 签名
+> 2. 然后输入 "w" 保存分区表的修改
+> 3. 之后使用 `partprobe /dev/vdb` 重新读取分区表
+> 4. 最后用 `xfs_growfs /work` 扩展文件系统
+>
+> 这样操作不会影响 /work 下的任何数据，可以安全地完成扩容。
+
+### 2. 通知系统重新读取分区表
+
+```shell
+partprobe /dev/vdb
+```
+
+### 3. 使用 xfs_growfs 命令扩展 XFS 文件系统
+
+```shell
+xfs_growfs /work  # 假设 /work 是 vdb1 的挂载点
+```
+

@@ -8,10 +8,6 @@ tag:
   - Java
   - JVM
 order: 5
-# 此页面会在文章列表置顶
-sticky: true
-# 此页面会出现在星标文章中
-star: true
 ---
 ![img](https://lixuanfengs.github.io/blog-images/vp/Java/007S8ZIlly1gg9kuge8ovj32150tt7cd.jpg)
 

@@ -2,14 +2,14 @@
 $colors: #cf1322, #fa541c, #f39c12, #2ecc71, #25a55b, #10a5a5, #096dd9, #aa6fe9,
 #eb2f96 !default;
 
-$code-color: (
-  // light: #383a42,
-        light: #abb2b1,
-        dark: #abb2bf,
-);
 $code-bg-color: (
-  // light: #ecf4fa,
-        light: #282c34,
-        dark: #282c34,
+  light: #ecf4fa,
+  dark: #282c34,
 );
+
+$code-color: (
+  light: #383A42,
+  dark: #abb2bf,
+);
+
 $theme-colors: #2196f3, #f26d6d, #cf1322, #fb9b5f;

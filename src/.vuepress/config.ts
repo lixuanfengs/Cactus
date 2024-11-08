@@ -9,8 +9,8 @@ import {
 } from "./plugins/vuepress-plugin-canvas";
 import { gradientCoverPlugin } from "./plugins/vuepress-plugin-gradient-cover";
 import { hitokotoPlugin } from "./plugins/vuepress-plugin-hitokoto";
-import { shikiPlugin } from "@vuepress/plugin-shiki";
 import { getDirname, path } from "vuepress/utils";
+import {copyrightPlugin} from "@vuepress/plugin-copyright";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -51,10 +51,6 @@ export default defineUserConfig({
     // vuePluginOptions: {},
   }),
   plugins: [
-    // 代码高亮
-    shikiPlugin({
-      theme: "one-dark-pro",
-    }),
     // 一言插件
     hitokotoPlugin({}),
     // 鼠标特效插件
@@ -76,6 +72,11 @@ export default defineUserConfig({
     }),
     // 遮罩插件
     gradientCoverPlugin({}),
+    // 自动追加版权信息，也可以禁止站点的复制或者选择
+    copyrightPlugin({
+        global: true,
+        author: "Cactus li",
+    }),
   ],
   // Enable it with pwa
   shouldPrefetch: false,

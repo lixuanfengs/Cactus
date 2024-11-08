@@ -30,6 +30,9 @@ importers:
       '@vuepress/plugin-blog':
         specifier: 2.0.0-rc.55
         version: 2.0.0-rc.55(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12))
+      '@vuepress/plugin-copyright':
+        specifier: 2.0.0-rc.55
+        version: 2.0.0-rc.55(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12))
       '@vuepress/plugin-feed':
         specifier: 2.0.0-rc.55
         version: 2.0.0-rc.55(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12))
@@ -1504,6 +1507,11 @@ packages:
     resolution: {integrity: sha512-eDGSqisi9Fnu3ODd4JwVepxd+ACrRbcO1ugAFukVeTQqySodnh5c70aDJN32QuYN7RmxIt1FvPJoS9/hWiOSrw==}
     peerDependencies:
       vuepress: 2.0.0-rc.17
+
+  '@vuepress/plugin-copyright@2.0.0-rc.55':
+    resolution: {integrity: sha512-RJH1VKYBsDb7EgVnCwOyH4hZ0CmJNlwJ1TH6NgkPuOVtsglRf1vVEgr6vuvP61RojufTJ49AQaxFnwgAAXdhaw==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.18
 
   '@vuepress/plugin-feed@2.0.0-rc.55':
     resolution: {integrity: sha512-X5vnzcKBHWa2xoA2CwYiBbPkkL4nLlzwsCVBjar5PX5l08D6Tnl4QS35znL2amFuwlUdRxdBV4tzQQmc875rhA==}
@@ -5507,6 +5515,16 @@ snapshots:
   '@vuepress/plugin-copyright@2.0.0-rc.52(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12))':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.52(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12))
+      '@vueuse/core': 11.1.0(vue@3.5.12)
+      vue: 3.5.12
+      vuepress: 2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+
+  '@vuepress/plugin-copyright@2.0.0-rc.55(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12))':
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.55(vuepress@2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12))
       '@vueuse/core': 11.1.0(vue@3.5.12)
       vue: 3.5.12
       vuepress: 2.0.0-rc.18(@vuepress/bundler-vite@2.0.0-rc.18(@types/node@22.7.5)(sass@1.79.5)(terser@5.34.1)(yaml@2.4.2))(vue@3.5.12)

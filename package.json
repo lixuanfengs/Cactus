@@ -14,6 +14,7 @@
     "@vue/repl": "^4.4.2",
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/plugin-blog": "2.0.0-rc.55",
+    "@vuepress/plugin-copyright": "2.0.0-rc.55",
     "@vuepress/plugin-feed": "2.0.0-rc.55",
     "@vuepress/plugin-pwa": "2.0.0-rc.55",
     "@vuepress/plugin-search": "2.0.0-rc.55",

@@ -136,15 +136,34 @@ export default MyTheme({
   // 插件配置
   plugins: {
     // 启用博客插件
-    blog: true,
+    blog: {
+      filter: ({ filePathRelative, frontmatter }) => {
+        // 将标记为非文章，并且是说说的加入文章采集中，以便后续筛选
+        if (!frontmatter.article && frontmatter.news) return true;
+        return true;
+      },
+      type: [
+        {
+          key: "news",
+          filter: (page) => page.frontmatter.news === true,
+          layout: "News",
+          frontmatter: () => ({ title: "说说" }),
+        },
+      ],
+    },
 
-    // install @waline/client before enabling it
-    // WARNING: This is a test server for demo only.
-    // You should create and use your own comment service in production.
-    // comment: {
-    //   provider: "Waline",
-    //   serverURL: "https://waline-comment.vuejs.press",
-    // },
+    // 代码高亮
+    shiki: {
+      themes: {
+        light: "one-light",
+        dark: "one-dark-pro",
+      },
+    },
+
+    markdownHint: {
+      // 启用 GFM 警告
+      alert: true,
+    },
 
     components: {
       components: ["Badge", "VPCard"],
