@@ -39,7 +39,7 @@ ssh的版本为：OpenSSH_8.2p1
 找到最新版本通过wget下载到 /usr/local/src 目录下
 
 ```shell
-wget -P /usr/local/src https://www.openssl.org/source/openssl-3.0.15.tar.gz	
+wget -P /usr/local/src https://www.openssl.org/source/openssl-3.3.2.tar.gz
 ```
 
 > 注意：由于OpenSSL 1.1.x版本已停止维护，ubuntu20.04.x系统建议都使用目前长期支持版
@@ -162,7 +162,7 @@ cp -arpf /usr/local/openssh-9.8p1/sbin/*   /usr/sbin/
 
 ```shell
 systemctl daemon-reload
-systemctl restart ssh
+systemctl restart sshd
 ssh -V
 ```
 

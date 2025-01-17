@@ -14,7 +14,7 @@ star: true
 # 是否原创
 isOriginal: true
 # 页面的预览图
-cover: https://beauties.eu.org/blogimg/main/img1/cover01.webp
+cover: https://beauties.eu.org/blogimg/main/img1/pexels-pixabay-210158.jpg
 ---
 ## 一、前言
 

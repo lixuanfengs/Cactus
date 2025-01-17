@@ -399,6 +399,8 @@ $ docker stop $(docker ps -q --filter "name=fastdfs") && docker rm $(docker ps -
 
 如果是使用打包好的镜像，则需要先将镜像包上传至服务器，然后导入镜像
 
+$ docker save fastdfs:6.12.2 | gzip > fastdfs-docker-image-6.12.2.tar.gz
+
 $ docker load -i /opt/docker/fastdfs-docker-image-6.12.2.tar.gz
 
 :::
