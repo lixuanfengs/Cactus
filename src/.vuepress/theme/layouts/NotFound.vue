@@ -58,10 +58,7 @@ const background = computed(() => {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  @media (max-width: hope-config.$tablet) {
-    align-items: center;
-    background-position: top;
-  }
+
   box-sizing: border-box;
   background-repeat: no-repeat;
   background-size: cover;
@@ -96,6 +93,11 @@ const background = computed(() => {
       font-size: 20px;
       line-height: 20px;
       letter-spacing: 2px;
+    }
+
+    @media (max-width: hope-config.$tablet) {
+      align-items: center;
+      background-position: top;
     }
   }
 

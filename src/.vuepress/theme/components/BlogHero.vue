@@ -17,7 +17,7 @@ import {
   provide,
 } from "vue";
 import { DropTransition } from "@theme-hope/components/transitions/DropTransition";
-import { SlideDownIcon } from "@theme-hope/modules/blog/components/icons/icons.js";
+import { SlideDownIcon } from "@theme-hope/modules/blog/components/icons/index";
 import "vuepress-theme-hope/modules/blog/styles/blog-hero.scss";
 import SwitchBtn from "./SwitchBtn.vue";
 import { BingApi } from "../api/bing";

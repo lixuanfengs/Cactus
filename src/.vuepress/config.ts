@@ -72,11 +72,6 @@ export default defineUserConfig({
     }),
     // 遮罩插件
     gradientCoverPlugin({}),
-    // 自动追加版权信息，也可以禁止站点的复制或者选择
-    copyrightPlugin({
-        global: true,
-        author: "Cactus li",
-    }),
   ],
   // Enable it with pwa
   shouldPrefetch: false,

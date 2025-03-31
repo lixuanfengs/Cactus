@@ -24,7 +24,7 @@
         @update-current-page="updatePage"
       />
     </template>
-    <EmptyIcon v-else />
+<!--    <EmptyIcon v-else />-->
   </div>
 </template>
 <script setup lang="ts">
@@ -33,7 +33,7 @@ import { useRoute, useRouter } from "vue-router";
 import { DropTransition } from "@theme-hope/components/transitions/DropTransition";
 import type { Article } from '@vuepress/plugin-blog/client';
 import Pagination from "@theme-hope/modules/blog/components/Pagination";
-import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index";
+//import { EmptyIcon } from "@theme-hope/modules/blog/components/icons/index";
 import { useBlogOptions } from "@theme-hope/modules/blog/composables/index";
 import type { ArticleInfo } from "vuepress-theme-hope";
 import NewsItem from "./NewsItem.vue";
@@ -104,30 +104,39 @@ onMounted(() => {
 <style lang="scss" scoped>
 h3 {
   font-family: PRshouxie;
-  @media (max-width: hope-config.$pad) {
-    font-size: 1.8rem;
-  }
+
   background: linear-gradient(
     120deg,
     var(--theme-color-light),
     var(--theme-color) 30%,
     #50e3eb 100%
   );
+
   -webkit-background-clip: text;
   background-clip: text;
   font-weight: bold;
+
   font-size: 3.6rem;
+
   line-height: 1.5;
   -webkit-text-fill-color: transparent;
+  @media (max-width: hope-config.$pad) {
+    & {
+      font-size: 1.8rem;
+    }
+  }
 }
 .sub-title {
   font-family: ZWZT;
   font-size: 1.5rem;
-  @media (max-width: hope-config.$pad) {
-    font-size: 1.0rem;
-  }
   font-weight: bold;
   text-align: right;
+  @media (max-width: hope-config.$pad) {
+    & {
+      font-size: 1.0rem;
+    }
+  }
+
 }
 .sub-title::before {
   content: "共" attr(data-item-count) "条碎碎念~ (｡♥‿♥｡)";
