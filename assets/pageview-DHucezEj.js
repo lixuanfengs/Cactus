@@ -1,1 +1,0 @@
-import{P as r}from"./app-DoArVS3A.js";const a=async()=>{try{const{pageviewCount:e}=await r(()=>import("./app-DoArVS3A.js").then(t=>t.$),[]);return e({serverURL:COMMENT_OPTIONS.serverURL})}catch{console.error("@waline/client is not installed!")}};export{a as updatePageview};
