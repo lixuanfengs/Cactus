@@ -2,7 +2,7 @@
 home: true
 title: 收藏
 icon: home
-heroImage: /logo.svg
+heroImage: /
 heroText: 你发现了有趣的地方~
 tagline: 🍃 穹顶之下，仰望繁星。
 actions:

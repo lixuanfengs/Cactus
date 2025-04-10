@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: zhuye
 title: 主页
-heroImage: /logo.svg
+#heroImage: /logo.svg
 heroText: Cactus's Blog
 bgImage: "/assets/home_bg3.jpg"
 tagline: You can put your slogan here
