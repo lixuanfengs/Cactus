@@ -1,7 +1,7 @@
 ---
 title: "ESXI 7.0升级8.0"
 subtitle: "ESXI 7.0升级8.0"
-date: 2024-4-10 16:06:01
+date: 2025-4-10 16:06:01
 category:
   - ESXI
 tag:
