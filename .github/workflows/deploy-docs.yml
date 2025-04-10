@@ -20,8 +20,7 @@ jobs:
           token: ${{ secrets.CACTUSA_TOKEN }}
           fetch-depth: 0
           # 如果你文档需要 Git 子模块，取消注释下一行
-          submodules: recursive
-          persist-credentials: true
+          submodules: true
 
       - name: 安装 pnpm
         uses: pnpm/action-setup@v2
