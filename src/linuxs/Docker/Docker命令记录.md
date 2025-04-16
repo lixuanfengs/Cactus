@@ -22,6 +22,23 @@ $ curl -sSL https://get.docker.com/ | sh
 $ sudo chmod 777 /var/run/docker.sock
 ```
 
+**配置镜像加速：**
+
+```shell
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": [
+    "https://hub.rat.dev",
+	"https://docker.1panel.live",
+	"https://proxy.1panel.live"
+  ]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
 **后台创建和运行容器**
 
 ```shell
@@ -91,3 +108,151 @@ $ docker run -it --rm -p  8001:8080 --name my-nginx nginx
 | `docker top nginx-server`     | 运行进程             |
 | `docker stats nginx-server`   | 容器资源使用         |
 | `docker diff nginx-server`    | 列出对容器所做的更改 |
+
+### 创建容器
+
+```shell
+docker create [options] IMAGE
+  -a, --attach               # 附加标准输出/错误
+  -i, --interactive          # 附加标准输入（交互式）
+  -t, --tty                  # 伪终端 pseudo-tty
+      --name NAME            # 命名你的镜像
+  -p, --publish 5000:5000    # 端口映射（主机:容器）
+      --expose 5432          # 向容器公开端口 
+  -P, --publish-all          # 发布所有端口
+      --link container:alias # 链接 linking
+  -v, --volume `pwd`:/app    # mount（需要绝对路径）
+  -e, --env NAME=hello       # 环境变量 env vars
+```
+
+```shell
+docker create --name my_redis --expose 6379 redis:3.0.2
+```
+
+### **操控容器**
+
+```shell
+#重命名容器
+docker rename my-nginx nginx-server
+#移除容器
+docker rm nginx-server
+#更新容器
+docker update --cpu-shares 512 -m 300M nginx-server
+```
+
+### Docker 镜像
+
+```shell
+docker images	#列出镜像
+docker rmi nginx	#删除镜像
+docker load < ubuntu.tar.gz	#加载一个 tarred 存储库
+docker load --input ubuntu.tar	#加载一个 tarred 存储库
+docker save busybox > ubuntu.tar	#将镜像保存到 tar 存档
+docker history	#显示镜像的历史
+docker commit nginx my_nginx	#将容器另存为镜像
+docker tag nginx eon01/nginx	#标记镜像
+docker push eon01/nginx	#推送镜
+```
+
+### 构建镜像
+
+```shell
+docker build .
+docker build github.com/creack/docker-firefox
+docker build - < Dockerfile
+docker build - < context.tar.gz
+docker build -t eon/nginx-server .
+docker build -f myOtherDockerfile .
+docker build --build-arg https_proxy=127.0.0.1:8088 # 使用http代理构建
+curl example.com/remote/Dockerfile | docker build -f - .
+docker save -o <保存路径>/myimage.tar myimage:latest # 导出
+docker load -i <路径>/myimage.tar # 导入
+#删除 <none> 镜像
+$ docker rmi -f $(docker images | grep "none" | awk '{print $3}')
+```
+
+### Docker 网络
+
+```shell
+#创建网络
+docker network create -d overlay MyOverlayNetwork
+docker network create -d bridge MyBridgeNetwork
+
+#自定义网络子网和网关
+docker network create -d overlay \
+  --subnet=192.168.0.0/16 \
+  --subnet=192.170.0.0/16 \
+  --gateway=192.168.0.100 \
+  --gateway=192.170.0.100 \
+  --ip-range=192.168.1.0/24 \
+  --aux-address="my-router=192.168.1.5" \
+  --aux-address="my-switch=192.168.1.6" \
+  --aux-address="my-printer=192.170.1.5" \
+  --aux-address="my-nas=192.170.1.6" \
+  MyOverlayNetwork
+
+#获取容器连接的网络
+docker inspect MyContainer | grep Network
+
+#获取有关网络的信息
+docker network inspect <network_name>
+
+#将正在运行的容器连接到网络
+docker network connect <network_name> <container_name>
+
+#启动时将容器连接到网络
+docker run -it -d --network=<network_name> <container_name>
+
+#断开容器与网络的连接
+docker network disconnect <network_name> <container_name>
+
+#删除网络
+docker network rm <network_name>
+
+#列出网络
+docker network ls
+```
+
+### 更多命令
+
+```shell
+#Docker Hub
+docker search search_word  # 在 docker hub 中搜索镜像
+docker pull user/image     # 从 docker hub 下载镜像
+docker login               # 向 docker hub 进行身份验证
+docker push user/image     # 将镜像上传到 docker hub
+
+#登录到镜像仓库
+docker login
+docker login localhost:8080
+
+#从镜像仓库注销
+docker logout
+docker logout localhost:8080
+
+#搜索镜像
+docker search nginx
+docker search nginx --stars=3 --no-trunc busybox
+
+#拉取镜像
+docker pull nginx
+docker pull eon01/nginx localhost:5000/myadmin/nginx
+
+#推送镜像
+docker push eon01/nginx
+docker push eon01/nginx localhost:5000/myadmin/nginx
+```
+
+**批量清除命令**
+
+```shell
+docker stop -f $(docker ps -a -q)	#停止所有容器
+docker rm -f $(docker ps -a -q)	#删除所有容器
+docker rmi -f $(docker images -q)	#删除所有镜像
+docker volume prune	#删除所有未使用的Docker Volume
+docker network prune	#删除所有未使用的Docker网络
+docker system prune	#清理所有空闲或与任何Docker容器无关的资源
+docker image prune	#删除悬空的Docker镜像
+docker container prune	#删除所有未使用的Docker 容器
+```
+
