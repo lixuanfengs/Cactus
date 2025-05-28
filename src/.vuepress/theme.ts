@@ -120,6 +120,7 @@ export default MyTheme({
             "/zh/demo/encrypt.html": ["cactusli"],
             "/tutorial/系统开发部署/Linux部署cactus-vue-pro.html": "cactusli",
             "/tutorial/系统开发部署/Docker部署cactus-vue-pro.html": "cactusli",
+            "/tutorial/系统开发部署/Docker中部署Jenkins实现CI&CD.html": "cactusli",
         },
     },
 
