@@ -20,7 +20,6 @@ export class HitokotoApi {
   public static toHitokoto(json: string): Hitokoto {
     return JSON.parse(json);
   }
-
   public static HitokotoToJson(value: Hitokoto): string {
     return JSON.stringify(value);
   }
