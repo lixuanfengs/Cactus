@@ -2,7 +2,7 @@ import { onMounted } from "vue";
 import { defineClientConfig } from "vuepress/client";
 import NotFound from "./theme/layouts/NotFound.vue";
 import Layout from "./theme/layouts/Layout.vue";
-import News from "./theme/layouts/News.vue";
+// import News from "./theme/layouts/News.vue"; // 注释掉 News 布局，因为对应的博客类型已被移除
 import Wormhole from "./theme/components/Wormhole";
 import Travelling from "./theme/components/Travelling";
 import Qweather from "./theme/components/Qweather.vue";
@@ -13,7 +13,7 @@ export default defineClientConfig({
   layouts: {
     Layout,
     NotFound,
-    News,
+    // News, // 移除 News 布局注册
   },
   enhance: ({ app }) => {
     app.component("Qweather", Qweather);

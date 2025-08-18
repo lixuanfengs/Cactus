@@ -3,84 +3,86 @@ import { navbar } from "vuepress-theme-hope";
 export const zhNavbar = navbar([
   { text: "主页", icon: "fa-solid fa-home", link: "/" },
   {
-    text: "技术博客",
-    icon: "fa-solid fa-blog",
+    text: "技术文档",
+    icon: "fa-solid fa-book",
     children: [
       {
-        text: "后端技术",
-        prefix: "/posts/",
+        text: "后端开发",
+        prefix: "/backend/",
         children: [
-          { text: "Java核心", icon: "java", link: "Java/" },
-          { text: "Spring生态", icon: "spring", link: "Spring/" },
-          { text: "Python开发", icon: "python", link: "Python/" },
+          { text: "Java核心", icon: "fa-brands fa-java", link: "java/" },
+          { text: "Spring生态", icon: "iconfont icon-spring", link: "spring/" },
+          { text: "Python开发", icon: "fa-brands fa-python", link: "python/" },
+          { text: "数据库技术", icon: "fa-solid fa-database", link: "database/" },
         ],
       },
       {
-        text: "前端技术",
-        prefix: "/webs/",
+        text: "前端开发",
+        prefix: "/frontend/",
         children: [
-          { text: "ES6进阶", icon: "fa-brands fa-js-square", link: "ES6/" },
-          { text: "TypeScript", icon: "fa-solid fa-code", link: "TypeScript/" },
+          { text: "JavaScript", icon: "fa-brands fa-js-square", link: "javascript/" },
+          { text: "TypeScript", icon: "fa-solid fa-code", link: "typescript/" },
+          { text: "前端框架", icon: "fa-brands fa-react", link: "frameworks/" },
         ],
       },
       {
         text: "运维部署",
-        prefix: "/linuxs/",
+        prefix: "/devops/",
         children: [
-          { text: "Linux运维", icon: "linux", link: "Linux/" },
-          { text: "Docker容器", icon: "docker", link: "Docker/" },
+          { text: "Linux运维", icon: "fa-brands fa-linux", link: "linux/" },
+          { text: "Docker容器", icon: "fa-brands fa-docker", link: "docker/" },
+          { text: "Kubernetes", icon: "fa-solid fa-dharmachakra", link: "kubernetes/" },
+          { text: "CI/CD", icon: "fa-solid fa-rocket", link: "cicd/" },
+          { text: "Git版本控制", icon: "fa-brands fa-git-alt", link: "git/" },
         ],
       },
       {
         text: "架构设计",
-        prefix: "/tutorial/",
+        prefix: "/architecture/",
         children: [
-          { text: "DDD架构", icon: "fa-solid fa-sitemap", link: "DDD 技术体系/" },
-          { text: "性能优化", icon: "fa-solid fa-tachometer-alt", link: "Java项目性能优化/" },
+          { text: "微服务架构", icon: "fa-solid fa-cubes", link: "microservices/" },
+          { text: "DDD设计", icon: "fa-solid fa-sitemap", link: "ddd/" },
+          { text: "设计模式", icon: "fa-solid fa-puzzle-piece", link: "patterns/" },
         ],
       },
     ],
   },
   {
     text: "实战教程",
-    icon: "fa-solid fa-book-open", // FontAwesome图标
+    icon: "fa-solid fa-graduation-cap",
     children: [
       {
-        text: "开发实战",
-        prefix: "/tutorial/",
+        text: "项目实战",
+        prefix: "/tutorials/projects/",
         children: [
-          { text: "Spring AI", icon: "fa-solid fa-robot", link: "Spring-AI-RAG/" },
-          { text: "OAuth2.0", icon: "fa-solid fa-shield-halved", link: "OAuth2.0 教程/" },
-          { text: "Maven构建", icon: "fa-solid fa-cube", link: "Maven 基础/" },
+          { text: "Spring AI", icon: "fa-solid fa-robot", link: "spring-ai-rag/" },
+          { text: "OAuth2.0", icon: "fa-solid fa-shield-halved", link: "oauth2/" },
+          { text: "性能优化", icon: "fa-solid fa-tachometer-alt", link: "performance/" },
+          { text: "延时任务", icon: "fa-solid fa-clock", link: "delayed-tasks/" },
         ],
       },
       {
-        text: "部署运维",
-        prefix: "/tutorial/",
+        text: "工具使用",
+        prefix: "/tutorials/tools/",
         children: [
-          { text: "系统部署", icon: "fa-solid fa-rocket", link: "系统开发部署/" },
-          { text: "网络工具", icon: "fa-solid fa-network-wired", link: "网络工具使用/" },
-          { text: "抓包调试", icon: "fa-solid fa-bug", link: "抓包工具指南/" },
+          { text: "Maven构建", icon: "fa-solid fa-cube", link: "maven/" },
+          { text: "网络工具", icon: "fa-solid fa-network-wired", link: "network/" },
+          { text: "调试工具", icon: "fa-solid fa-bug", link: "debugging/" },
         ],
       },
     ],
   },
   {
-    text: "开发工具",
+    text: "资源导航",
     icon: "fa-solid fa-toolbox",
     children: [
-      { text: "Git使用", icon: "fa-brands fa-git-alt", link: "/devops/Git使用教程/" },
-      { text: "工具导航", icon: "fa-solid fa-compass", link: "/demo/" },
-      { text: "延时任务", icon: "fa-solid fa-clock", link: "/tutorial/实现延时任务的方式汇总/" },
+      { text: "开发工具", icon: "fa-solid fa-compass", link: "/resources/tools/" },
+      { text: "收藏夹", icon: "fa-solid fa-bookmark", link: "/resources/collections/" },
+      { text: "博客搭建", icon: "fa-solid fa-blog", link: "/blog/" },
     ],
   },
   {
-    text: "收藏夹",
-    icon: "fa-solid fa-bookmark",
-    link: "/collect",
-  },
-  {
-    text: "互动",
+    text: "互动交流",
     icon: "fa-solid fa-users",
     children: [
       { text: "留言板", icon: "fa-solid fa-comments", link: "/visitorsbook" },
@@ -89,10 +91,10 @@ export const zhNavbar = navbar([
   },
   {
     text: "关于",
-    icon: "guanyu",
+    icon: "fa-solid fa-info-circle",
     children: [
-      { text: "关于我", icon: "people", link: "/intro" },
-      { text: "关于本站", icon: "info", link: "/about" },
+      { text: "关于我", icon: "fa-solid fa-user", link: "/intro" },
+      { text: "关于本站", icon: "fa-solid fa-info", link: "/about" },
     ],
   },
 ]);

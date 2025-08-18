@@ -3,7 +3,7 @@ title: 说说
 icon: xiaoshuo1
 article: false
 timeline: false
-layout: News
+# layout: News  # 注释掉 News 布局，使用默认布局
 ---
 
 # 说说

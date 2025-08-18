@@ -73,12 +73,8 @@ export default defineUserConfig({
         chunkSizeWarningLimit: 1000,
         rollupOptions: {
           output: {
-            // 手动分包
-            manualChunks: {
-              vendor: ['vue', 'vue-router'],
-              charts: ['echarts', 'chart.js'],
-              markdown: ['mermaid', 'katex']
-            }
+            // 移除 manualChunks 配置，因为这些库在 VuePress 中被视为外部模块
+            // 让 Vite 自动处理代码分割
           }
         }
       }
