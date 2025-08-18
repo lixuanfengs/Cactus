@@ -215,19 +215,18 @@ export default MyTheme({
             },
         },
 
-        chartjs: true,
+        // 按需启用Markdown功能，减少初始化时间
+        chartjs: false, // 按需启用
         demo: true,
-        echarts: true,
-        flowchart: true,
-        kotlinPlayground: true,
-        markmap: true,
-        mermaid: true,
-        plantuml: true,
-        playground: {
-            presets: ["ts", "vue", "unocss"],
-        },
-        sandpack: true,
-        vuePlayground: true,
+        echarts: false, // 按需启用
+        flowchart: false, // 按需启用
+        kotlinPlayground: false, // 按需启用
+        markmap: false, // 按需启用
+        mermaid: true, // 保留常用的
+        plantuml: false, // 按需启用
+        playground: false, // 按需启用
+        sandpack: false, // 按需启用
+        vuePlayground: false, // 按需启用
     },
 
 
@@ -238,18 +237,18 @@ export default MyTheme({
         // 启用博客插件
         blog: {
             filter: ({filePathRelative, frontmatter}) => {
-                // 将标记为非文章，并且是说说的加入文章采集中，以便后续筛选
-                if (!frontmatter.article && frontmatter.news) return true;
+                // 过滤文章
                 return true;
             },
-            type: [
-                {
-                    key: "news",
-                    filter: (page) => page.frontmatter.news === true,
-                    layout: "News",
-                    frontmatter: () => ({title: "说说"}),
-                },
-            ],
+            // 移除说说功能
+            // type: [
+            //     {
+            //         key: "news",
+            //         filter: (page) => page.frontmatter.news === true,
+            //         layout: "News",
+            //         frontmatter: () => ({title: "说说"}),
+            //     },
+            // ],
         },
 
         copyright: {
@@ -264,6 +263,9 @@ export default MyTheme({
                 "//at.alicdn.com/t/c/font_2410206_5vb9zlyghj.css",
                 // 自己的
                 "//at.alicdn.com/t/c/font_4094073_jquxe6b57p.css",
+                // 添加更多图标库
+                "//at.alicdn.com/t/c/font_2922463_99aa80ii7cf.css", // 更多技术图标
+                "//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css", // FontAwesome
 
             ],
         },
@@ -271,11 +273,12 @@ export default MyTheme({
         components: {
             components: ["Badge", "VPCard"],
         },
-        // uncomment these if you want a PWA
+        
+        // 简化PWA配置，减少启动时间
         pwa: {
             favicon: "/favicon.ico",
-            cacheHTML: true,
-            cachePic: true,
+            cacheHTML: false, // 开发环境禁用缓存
+            cachePic: false,  // 开发环境禁用缓存
             appendBase: true,
             apple: {
                 icon: "/assets/icon/apple-icon-152.png",
@@ -294,35 +297,9 @@ export default MyTheme({
                         type: "image/png",
                     },
                     {
-                        src: "/assets/icon/chrome-mask-192.png",
-                        sizes: "192x192",
-                        purpose: "maskable",
-                        type: "image/png",
-                    },
-                    {
-                        src: "/assets/icon/chrome-512.png",
-                        sizes: "512x512",
-                        type: "image/png",
-                    },
-                    {
                         src: "/assets/icon/chrome-192.png",
                         sizes: "192x192",
                         type: "image/png",
-                    },
-                ],
-                shortcuts: [
-                    {
-                        name: "Demo",
-                        short_name: "Demo",
-                        url: "/demo/",
-                        icons: [
-                            {
-                                src: "/assets/icon/guide-maskable.png",
-                                sizes: "192x192",
-                                purpose: "maskable",
-                                type: "image/png",
-                            },
-                        ],
                     },
                 ],
             },

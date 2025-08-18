@@ -173,6 +173,46 @@ table {
   width: 100%;
   display: table;
 }
+
+// 移动端导航优化
+@media (max-width: hope-config.$tablet) {
+  // 移动端导航栏优化
+  .vp-navbar {
+    .vp-navbar-links {
+      .vp-navbar-dropdown {
+        .vp-dropdown-wrapper {
+          max-height: 70vh;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+  
+  // 移动端侧边栏优化
+  .vp-sidebar {
+    max-height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+    
+    .vp-sidebar-links {
+      padding-bottom: 2rem;
+    }
+  }
+  
+  // 移动端导航项目间距优化
+  .vp-sidebar-group {
+    .vp-sidebar-heading {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .vp-sidebar-links {
+      .vp-sidebar-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
 hr {
   margin-left: 0.375em;
   margin-right: 0.375em;

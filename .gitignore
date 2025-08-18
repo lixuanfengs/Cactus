@@ -4,5 +4,20 @@ src/.vuepress/.cache/
 src/.vuepress/.temp/
 src/.vuepress/dist/
 
+# Vite缓存
+.vite/
+*.local
+
+# 系统缓存
+.DS_Store
+.env.local
+.env.*.local
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
 ### IntelliJ IDEA ###
 .idea

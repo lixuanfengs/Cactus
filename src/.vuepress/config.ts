@@ -19,6 +19,11 @@ export default defineUserConfig({
   base: "/",
   lang: "zh-CN",
   head: [["meta", { name: "referrer", content: "no-referrer-when-downgrade" }]],
+  
+  // 开发优化
+  cache: ".vuepress/.cache", // 启用缓存
+  debug: process.env.NODE_ENV === 'development',
+  
   locales: {
     "/": {
       lang: "zh-CN",
@@ -46,6 +51,36 @@ export default defineUserConfig({
             rewrite: (path) => path.replace(/^\/bing/, ""),
           },
         },
+      },
+      // 开发环境优化
+      optimizeDeps: {
+        include: [
+          "vue",
+          "vue-router"
+        ],
+        exclude: [
+          "vuepress-theme-hope",
+          "@vuepress/client",
+          "@vuepress/theme-default",
+          "echarts",
+          "mermaid",
+          "reveal.js",
+          "chart.js"
+        ]
+      },
+      build: {
+        // 减少构建时的内存占用
+        chunkSizeWarningLimit: 1000,
+        rollupOptions: {
+          output: {
+            // 手动分包
+            manualChunks: {
+              vendor: ['vue', 'vue-router'],
+              charts: ['echarts', 'chart.js'],
+              markdown: ['mermaid', 'katex']
+            }
+          }
+        }
       }
     },
     // vuePluginOptions: {},
