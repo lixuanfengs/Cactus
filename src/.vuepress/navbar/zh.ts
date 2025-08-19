@@ -78,7 +78,7 @@ export const zhNavbar = navbar([
     children: [
       { text: "开发工具", icon: "fa-solid fa-compass", link: "/resources/tools/" },
       { text: "收藏夹", icon: "fa-solid fa-bookmark", link: "/resources/collections/" },
-      { text: "博客搭建", icon: "fa-solid fa-blog", link: "/blog/" },
+      { text: "博客相关", icon: "fa-solid fa-blog", link: "/blog/" },
     ],
   },
   {

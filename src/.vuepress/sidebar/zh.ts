@@ -216,11 +216,14 @@ export const zhSidebar = sidebar({
       link: "blog/",
     },
     {
-      text: "关于",
-      icon: "info",
-      prefix: "about/",
-      link: "about/",
+      text: "互动交流",
+      icon: "fa-solid fa-users",
+      children: [
+        { text: "留言板", icon: "fa-solid fa-comments", link: "/visitorsbook" },
+        { text: "友情链接", icon: "fa-solid fa-link", link: "/friend" },
+      ],
     },
+    { text: "关于", icon: "info", link: "/about" },
   ],
   // 新的目录结构配置
   "/backend/java/": "structure",

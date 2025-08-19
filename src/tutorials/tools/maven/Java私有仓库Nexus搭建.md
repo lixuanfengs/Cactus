@@ -86,7 +86,7 @@ cd /usr/local/nexus-3.58.0-04/bin
 #### Blob Stores
 文件存储的地方，创建一个目录的话，对应文件系统的一个目录。
 ![image.png](https://beauties.eu.org/blogimg/main/img1/1689838320614-711982f6-9c51-4378-b97d-ddf6dba0d682-813724.png)
-![image.png](./img/Wo6bycxVTo1cCphM/1689838344131-e015556d-5f8f-49e7-94be-11dfc2956ec8-145621.png)
+![1689838344131-e015556d-5f8f-49e7-94be-11dfc2956ec8-145621](https://beauties.eu.org/blogimg/main/img1/1689838344131-e015556d-5f8f-49e7-94be-11dfc2956ec8-145621.png)
 
 #### Repositories
 仓库分为三种：Proxy、hosted、group
@@ -130,7 +130,7 @@ Hosted的创建和Proxy类似，类型需选择maven2(hosted)。注意：Deploym
 
 ### 配置Maven的settings.xml
 在idea、eclipse等IDE中配置好maven的settings文件路径后，在mirrors标签中增加一个mirror
-```
+```xml
 <mirror>
     <id>nexus-aliyun</id>
     <mirrorOf>*</mirrorOf>
@@ -143,7 +143,7 @@ url中填入之前在Nexus中自己创建的代理中央仓库
 
 ### 配置项目中的pom.xml
 在pom文件中增加一个repository，注意id和name需和代理中央仓库的Name一致。
-```
+```xml
 <repositories>
 	<repository>
 		<id>aliyun</id>
