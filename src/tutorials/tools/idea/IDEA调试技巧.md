@@ -1,6 +1,6 @@
 ---
-title: "天花板调试技巧"
-subtitle: "天花板调试技巧"
+title: "IDEA调试技巧"
+subtitle: "IDEA调试技巧"
 date: 2025-4-05 14:36:20
 category:
    - idea
@@ -9,7 +9,7 @@ tag:
 order: 1
 ---
 
-# IDEA 天花板调试技巧
+# IDEA调试技巧
 
 ![1727095935933-fe07de0a-74fb-453c-975d-005a0a8d3420.png](https://beauties.eu.org/blogimg/main/img1/1727095935933-fe07de0a-74fb-453c-975d-005a0a8d3420-228878.png)
 
