@@ -5,6 +5,7 @@
 ## 📚 教程分类
 
 ### 🚀 项目实战
+- **AI-MCP-CactusLi** - 基于Spring AI MCP的智能自动发帖系统
 - **Spring AI RAG** - AI知识库项目完整实现
 - **OAuth2.0** - 认证授权系统实战
 - **性能优化** - Java项目性能调优实践
@@ -31,6 +32,7 @@
 
 ## 🔥 热门教程
 
+- AI-MCP-CactusLi智能自动发帖系统
 - Spring AI RAG知识库项目
 - OAuth2.0认证授权实战
 - Java项目性能优化实践
