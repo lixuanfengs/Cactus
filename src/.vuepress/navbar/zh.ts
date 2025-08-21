@@ -13,7 +13,15 @@ export const zhNavbar = navbar([
           { text: "Java核心", icon: "fa-brands fa-java", link: "java/" },
           { text: "Spring生态", icon: "iconfont icon-spring", link: "spring/" },
           { text: "Python开发", icon: "fa-brands fa-python", link: "python/" },
-          { text: "数据库技术", icon: "fa-solid fa-database", link: "/backend/database/MySQL/" },
+          {
+            text: "数据库技术",
+            icon: "fa-solid fa-database",
+            prefix: "database/",
+            link: "database/",
+            children: [
+              { text: "MySQL", icon: "fa-solid fa-database", link: "MySQL/" },
+            ],
+          },
         ],
       },
       {

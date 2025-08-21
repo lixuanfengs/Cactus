@@ -23,7 +23,7 @@ order: 10
 
 ## **3、登录ssh并执行升级命令**
 
-```language-shell
+```shell
 #查看当前系统版本
 [root@esxi:~] vmware -lv
 VMware ESXi 7.0.2 build-17867351
