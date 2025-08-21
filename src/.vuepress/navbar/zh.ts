@@ -13,7 +13,7 @@ export const zhNavbar = navbar([
           { text: "Java核心", icon: "fa-brands fa-java", link: "java/" },
           { text: "Spring生态", icon: "iconfont icon-spring", link: "spring/" },
           { text: "Python开发", icon: "fa-brands fa-python", link: "python/" },
-          { text: "数据库技术", icon: "fa-solid fa-database", link: "database/" },
+          { text: "数据库技术", icon: "fa-solid fa-database", link: "/backend/database/MySQL/" },
         ],
       },
       {
@@ -56,6 +56,7 @@ export const zhNavbar = navbar([
         prefix: "/tutorials/projects/",
         children: [
           { text: "Spring AI", icon: "fa-solid fa-robot", link: "spring-ai-rag/" },
+          { text: "AI MCP Cactus", icon: "fa-solid fa-microchip", link: "ai-mcp-cactusli/" },
           { text: "OAuth2.0", icon: "fa-solid fa-shield-halved", link: "oauth2/" },
           { text: "性能优化", icon: "fa-solid fa-tachometer-alt", link: "performance/" },
           { text: "延时任务", icon: "fa-solid fa-clock", link: "delayed-tasks/" },
