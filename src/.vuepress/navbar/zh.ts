@@ -17,6 +17,7 @@ export const zhNavbar = navbar([
             text: "数据库技术",
             icon: "fa-solid fa-database",
             prefix: "database/",
+
             link: "database/",
             children: [
               { text: "MySQL", icon: "fa-solid fa-database", link: "MySQL/" },
