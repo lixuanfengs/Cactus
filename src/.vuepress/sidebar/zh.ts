@@ -251,6 +251,29 @@ export const zhSidebar = sidebar({
   "/tutorials/tools/debugging/": "structure",
   "/resources/tools/": "structure",
   "/resources/collections/": "structure",
+  "/resources/collections/cloudflare-优选ip/": [
+    {
+      text: "Cloudflare优选IP",
+      icon: "fa-brands fa-cloudflare",
+      children: [
+        {
+          text: "目录导航",
+          icon: "fa-solid fa-home",
+          link: "/resources/collections/cloudflare-优选ip/",
+        },
+        {
+          text: "基础教程",
+          icon: "fa-solid fa-book",
+          link: "/resources/collections/cloudflare-优选ip/basic-tutorial.md",
+        },
+        {
+          text: "进阶优化指南",
+          icon: "fa-solid fa-rocket",
+          link: "/resources/collections/cloudflare-优选ip/advanced-optimization.md",
+        },
+      ],
+    },
+  ],
   "/blog/": "structure",
 
 });
