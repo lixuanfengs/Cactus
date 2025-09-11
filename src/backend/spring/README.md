@@ -1,6 +1,6 @@
 ---
 title: "Spring 知识体系"
-icon: java
+icon: "iconfont icon-spring"
 date: 2024-09-05
 index: true
 timeline: false
@@ -11,4 +11,4 @@ article: false
 :::
 
 --- 
-<AutoCatalog />
+<Catalog />

@@ -1,6 +1,6 @@
 ---
 title: "数据库知识体系"
-icon: mysql
+icon: "fa-classic fa-solid fa-database"
 date: 2024-09-05
 index: true
 timeline: false
@@ -11,4 +11,4 @@ article: false
 :::
 
 --- 
-<AutoCatalog />
+<Catalog />
