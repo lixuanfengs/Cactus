@@ -59,6 +59,9 @@ $ git diff --staged
 
 # 在指定分支之前应用当前分支的任何提交
 $ git rebase [branch]
+
+# 撤销最近的 commit，但保留更改
+$ git reset --soft HEAD~1
 ```
 
 ### 全局配置
@@ -82,3 +85,18 @@ $ git config --list
 # 删除全局设置
 $ git config --global --unset <entry-name>
 ```
+
+### 使用 `git rm --cached` 删除文件
+
+```shell
+# 从 Git 缓存中删除文件（不删除本地文件）：这会将文件从 Git 缓存中删除，但本地文件会保留。
+$ git rm --cached 路径/文件名
+
+
+#  提交删除操作：
+$ git commit -m "remove 文件名 from Git tracking"
+
+# 推送到远程仓库：
+$ git push origin 分支名
+```
+
