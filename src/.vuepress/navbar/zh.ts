@@ -75,7 +75,7 @@ export const zhNavbar = navbar([
         text: "工具使用",
         prefix: "/tutorials/tools/",
         children: [
-          { text: "Ai编程工具", icon: "fa-solid fa-bug", link: "aicoding/" },
+          { text: "Ai编程工具", icon: "fa-solid fa-code", link: "aicoding/" },
           { text: "Maven构建", icon: "fa-solid fa-cube", link: "maven/" },
           { text: "网络工具", icon: "fa-solid fa-network-wired", link: "network/" },
           { text: "调试工具", icon: "fa-solid fa-bug", link: "debugging/" },
